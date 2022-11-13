@@ -23,6 +23,20 @@ interface ApiInterface {
 
     @POST("signup")
     fun register(@Body map: HashMap<String ,String>):Call<User>
+
+    @POST("googleVerifier")
+    fun googleVerifier(@Body map: HashMap<String ,String>):Call<User>
+
+    @POST("googleSignIn")
+    fun googleSignIn(@Body map: HashMap<String ,String>):Call<User>
+
+    @POST("googleSignup")
+    fun googleSignUp(@Body map: HashMap<String ,String>):Call<User>
+
+
+
+
+
     companion object {
 
     fun create() : ApiInterface {

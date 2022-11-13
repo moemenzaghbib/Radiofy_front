@@ -4,6 +4,7 @@ import com.google.android.material.textfield.TextInputEditText
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
@@ -68,6 +69,9 @@ class MainActivity : AppCompatActivity() {
                                 Log.e("//////////////////user ", response.body().toString())
 
                             }
+                            val intent = Intent(this@MainActivity, SignInActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         }
                         override fun onFailure(call: Call<User>, t: Throwable) {
                             Toast.makeText(this@MainActivity, "Connexion error!", Toast.LENGTH_SHORT)
@@ -100,8 +104,8 @@ class MainActivity : AppCompatActivity() {
             layoutLastName.error = getString(R.string.mustNotBeEmpty)
             return false
         }
-        if (txtEmail.text!!.isEmpty()){
-            layoutEmail.error = getString(R.string.mustNotBeEmpty)
+        if (!Patterns.EMAIL_ADDRESS.matcher(txtEmail.text.toString()).matches()){
+            layoutEmail.error = getString(R.string.checkYourEmail)
             return false
         }
         if (txtpassword.text!!.isEmpty()){
