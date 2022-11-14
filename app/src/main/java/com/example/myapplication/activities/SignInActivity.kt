@@ -18,7 +18,9 @@ import retrofit2.Callback
 import retrofit2.Response
 import android.content.SharedPreferences
 import android.util.Patterns
+import android.widget.ImageView
 import android.widget.Switch
+import com.example.myapplication.ForgotPasswordActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -37,6 +39,7 @@ class SignInActivity : AppCompatActivity() {
     lateinit var btnSignIn: Button
     lateinit var mSharedPref: SharedPreferences
     lateinit var checkRememberMe: Switch
+    lateinit var buttonForgotPassword : TextView
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     val apiInterface = ApiInterface.create()
 
@@ -52,7 +55,7 @@ class SignInActivity : AppCompatActivity() {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        val googleLoginButton = findViewById<Button>(R.id.google_login_btn)
+        val googleLoginButton = findViewById<ImageView>(R.id.google_login_btn)
         googleLoginButton.setOnClickListener {
             Log.e("lenna ? ","test");
             signIn()
@@ -69,6 +72,7 @@ class SignInActivity : AppCompatActivity() {
         btnSignIn = findViewById(R.id.Login_Button)
         registernow = findViewById(R.id.newUsertextbutton)
         checkRememberMe = findViewById(R.id.Switch_rememberme)
+        buttonForgotPassword = findViewById(R.id.ForgotPassword_Button)
 
         if (mSharedPref.getBoolean("IS_REMEMBRED", false) ){
             Log.e("hhhhhhhhhh",mSharedPref.getBoolean("IS_REMEMBRED", false).toString())
@@ -145,6 +149,13 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
             }
+        buttonForgotPassword.setOnClickListener {
+            val intent = Intent(this@SignInActivity, ForgotPasswordActivity::class.java)
+
+            startActivity(intent)
+            finish()
+
+        }
 
     }
     private fun validate(): Boolean {

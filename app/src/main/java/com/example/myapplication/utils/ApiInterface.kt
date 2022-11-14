@@ -1,10 +1,18 @@
 package com.example.myapplication.utils
+import android.provider.ContactsContract
 import com.example.myapplication.models.User
+import com.example.myapplication.models.data
+import okhttp3.Response
+import okhttp3.ResponseBody
+import org.json.JSONArray
+import org.json.JSONObject
+import org.json.JSONStringer
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.Field
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
 
@@ -32,6 +40,11 @@ interface ApiInterface {
 
     @POST("googleSignup")
     fun googleSignUp(@Body map: HashMap<String ,String>):Call<User>
+
+    @POST("forgot")
+    fun forgotPassword(@Body map: HashMap<String, String>):Call<data>
+
+
 
 
 

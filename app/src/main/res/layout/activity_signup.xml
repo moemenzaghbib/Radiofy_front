@@ -6,21 +6,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/c5ac296e3a72b4fa680766149f59e164">
 
-    <Button
+    <ImageView
         android:id="@+id/google_login_btn"
-        android:layout_width="41dp"
-        android:layout_height="45dp"
-        android:layout_centerInParent="true"
-        android:background="@null"
-        android:drawableLeft="@drawable/google_icon"
-        android:drawablePadding="8dp"
-        android:padding="8dp"
-        android:text=""
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="47dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/google__1_"
         app:layout_constraintStart_toEndOf="@+id/newUsertextbutton"
         app:layout_constraintTop_toBottomOf="@+id/Login_Button" />
 
@@ -117,9 +109,9 @@
 
     <TextView
         android:id="@+id/newUsertextbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="201dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="24dp"
         android:clickable="true"
         android:focusable="true"
         android:minHeight="48dp"
