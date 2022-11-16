@@ -7,6 +7,7 @@ import android.util.Log
 import android.util.Patterns
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.example.myapplication.R
 import com.example.myapplication.models.User
@@ -15,6 +16,9 @@ import com.google.android.material.textfield.TextInputLayout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
+
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var txtFirstName: TextInputEditText
@@ -25,24 +29,38 @@ class MainActivity : AppCompatActivity() {
     lateinit var layoutEmail: TextInputLayout
     lateinit var txtpassword: TextInputEditText
     lateinit var layoutPassword: TextInputLayout
+    lateinit var gotosignin: TextView
 
     lateinit var btnSignup: Button
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // class sign up
         setContentView(R.layout.activity_main)
 
-        txtFirstName = findViewById(R.id.FirstNameInput)
-        txtlastName = findViewById(R.id.LastNameInput)
-        txtEmail = findViewById(R.id.EmailInput)
-        txtpassword = findViewById(R.id.PasswordInput)
-        btnSignup = findViewById(R.id.SignupButton)
-        layoutFirstName = findViewById(R.id.FirstNameLayout)
-        layoutLastName = findViewById(R.id.LastNameLayout)
-        layoutEmail = findViewById(R.id.EmailLayout)
-        layoutPassword = findViewById(R.id.PasswordLayout)
+        txtFirstName = findViewById(R.id.firstname)
+        txtlastName = findViewById(R.id.lastname)
+        txtEmail = findViewById(R.id.email)
+        txtpassword = findViewById(R.id.password)
+        btnSignup = findViewById(R.id.signupbtn)
+        layoutFirstName = findViewById(R.id.firstnameContainer)
+        layoutLastName = findViewById(R.id.lastnameContainer)
+        layoutEmail = findViewById(R.id.emailContainer)
+        layoutPassword = findViewById(R.id.passwordContainer)
+        gotosignin = findViewById<Button>(R.id.gotosignin)
 
 
+
+        // go to sign in
+        gotosignin.setOnClickListener {
+            val intent = Intent(this@MainActivity, login2::class.java)
+            startActivity(intent)
+
+        }
+
+        // btn sign up
         btnSignup.setOnClickListener{
             val apiInterface = ApiInterface.create()
 

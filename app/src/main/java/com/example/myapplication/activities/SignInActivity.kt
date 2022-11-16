@@ -18,6 +18,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import android.content.SharedPreferences
 import android.util.Patterns
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.Switch
 import com.example.myapplication.ForgotPasswordActivity
@@ -38,14 +39,28 @@ class SignInActivity : AppCompatActivity() {
     lateinit var registernow: TextView
     lateinit var btnSignIn: Button
     lateinit var mSharedPref: SharedPreferences
-    lateinit var checkRememberMe: Switch
+    lateinit var checkRememberMe: CheckBox
+  //  lateinit var checkRememberMe: Switch
+
     lateinit var buttonForgotPassword : TextView
     private lateinit var mGoogleSignInClient: GoogleSignInClient
+
+    lateinit var gotosignup: TextView
+
+
+
+
+
+
     val apiInterface = ApiInterface.create()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signup)
+        // new sign in
+        setContentView(R.layout.activity_sign2)
+
+        gotosignup = findViewById<Button>(R.id.gotosignup)
+
 
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -55,7 +70,7 @@ class SignInActivity : AppCompatActivity() {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        val googleLoginButton = findViewById<ImageView>(R.id.google_login_btn)
+        val googleLoginButton = findViewById<Button>(R.id.sgningooglebtn)
         googleLoginButton.setOnClickListener {
             Log.e("lenna ? ","test");
             signIn()
@@ -65,14 +80,22 @@ class SignInActivity : AppCompatActivity() {
 
         mSharedPref = getSharedPreferences("PREF_NAME", MODE_PRIVATE);
 
-        txtEmail = findViewById(R.id.Email_Login_Input)
-        txtpassword = findViewById(R.id.Password_Login_Input)
-        layoutEmail = findViewById(R.id.Email_Login_Layout)
-        layoutPassword = findViewById(R.id.Password_Login_Layout)
-        btnSignIn = findViewById(R.id.Login_Button)
-        registernow = findViewById(R.id.newUsertextbutton)
-        checkRememberMe = findViewById(R.id.Switch_rememberme)
+        txtEmail = findViewById(R.id.email)
+        txtpassword = findViewById(R.id.password)
+        layoutEmail = findViewById(R.id.emailContainer)
+        layoutPassword = findViewById(R.id.passwordContainer)
+        btnSignIn = findViewById(R.id.sgninbtn)
+       // registernow = findViewById(R.id.newUsertextbutton)
+        checkRememberMe = findViewById(R.id.checkBox)
         buttonForgotPassword = findViewById(R.id.ForgotPassword_Button)
+
+
+        // go to sign up
+        gotosignup.setOnClickListener {
+            val intent = Intent(this@SignInActivity, MainActivity::class.java)
+            startActivity(intent)
+        }
+
 
         if (mSharedPref.getBoolean("IS_REMEMBRED", false) ){
             Log.e("hhhhhhhhhh",mSharedPref.getBoolean("IS_REMEMBRED", false).toString())
