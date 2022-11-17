@@ -28,9 +28,9 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_password)
-        restor_button = findViewById(R.id.send_restor_button)
-        email_input = findViewById(R.id.email_to_reset_input)
-        email_input_layout = findViewById(R.id.email_input_to_restor_layout)
+        restor_button = findViewById(R.id.resetbtn)
+        email_input = findViewById(R.id.email)
+        email_input_layout = findViewById(R.id.emailContainer)
 
         restor_button.setOnClickListener {
             if (email_input.text!!.isEmpty()){
