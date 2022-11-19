@@ -167,7 +167,7 @@ class SignInActivity : AppCompatActivity() {
 
 
         }
-        registernow.setOnClickListener {
+        gotosignup.setOnClickListener {
             val intent = Intent(this@SignInActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
