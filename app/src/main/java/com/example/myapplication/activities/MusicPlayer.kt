@@ -27,9 +27,9 @@ class MusicPlayer: AppCompatActivity()  {
         favouritebtn = findViewById<Button>(R.id.favouritebtn)
         palylistbtn = findViewById<Button>(R.id.palylistbtn)
 
-        var drawer = findViewById<DrawerLayout>(R.id.drawer)
-        toggle = ActionBarDrawerToggle(this,drawer,R.string.open,R.string.close)
-        toggle.syncState()
+//        var drawer = findViewById<DrawerLayout>(R.id.drawer)
+//        toggle = ActionBarDrawerToggle(this,drawer,R.string.open,R.string.close)
+//        toggle.syncState()
         shufflebtn.setOnClickListener {
             val intent = Intent(this@MusicPlayer, PlaylistActivity::class.java)
             startActivity(intent)

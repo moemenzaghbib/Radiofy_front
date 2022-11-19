@@ -19,8 +19,6 @@ import retrofit2.Response
 import android.content.SharedPreferences
 import android.util.Patterns
 import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.Switch
 import com.example.myapplication.ForgotPasswordActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -36,7 +34,8 @@ class SignInActivity : AppCompatActivity() {
     lateinit var layoutEmail: TextInputLayout
     lateinit var txtpassword: TextInputEditText
     lateinit var layoutPassword: TextInputLayout
-    lateinit var registernow: TextView
+//    lateinit var registernow: TextView
+
     lateinit var btnSignIn: Button
     lateinit var mSharedPref: SharedPreferences
     lateinit var checkRememberMe: CheckBox
@@ -57,7 +56,7 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // new sign in
-        setContentView(R.layout.activity_sign2)
+        setContentView(R.layout.activity_signin)
 
         gotosignup = findViewById<Button>(R.id.gotosignup)
 
@@ -136,7 +135,7 @@ class SignInActivity : AppCompatActivity() {
                                 .show()
                             println(user)
                             Log.e("email chytbth",user?.email.toString())
-                            val intent = Intent(this@SignInActivity, MainScreenActivity::class.java)
+                            val intent = Intent(this@SignInActivity, MusicPlayer::class.java)
 
                                 .putExtra("email", user?.email.toString())
                                 .putExtra("firstname", user?.firstname.toString())
@@ -167,11 +166,11 @@ class SignInActivity : AppCompatActivity() {
 
 
         }
-        registernow.setOnClickListener {
-            val intent = Intent(this@SignInActivity, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-            }
+//        registernow.setOnClickListener {
+//            val intent = Intent(this@SignInActivity, MainActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//            }
         buttonForgotPassword.setOnClickListener {
             val intent = Intent(this@SignInActivity, ForgotPasswordActivity::class.java)
 

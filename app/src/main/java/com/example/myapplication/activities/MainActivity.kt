@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // class sign up
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_signup)
 
         txtFirstName = findViewById(R.id.firstname)
         txtlastName = findViewById(R.id.lastname)
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         // go to sign in
         gotosignin.setOnClickListener {
-            val intent = Intent(this@MainActivity, login2::class.java)
+            val intent = Intent(this@MainActivity, SignInActivity::class.java)
             startActivity(intent)
 
         }
