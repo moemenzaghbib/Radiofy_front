@@ -19,7 +19,7 @@ class PostRepository {
         return instance!!
     }
 
-    fun getEvents(): MutableList<EventItem> {
+    fun getEventsList(): MutableList<EventItem> {
         val listData = mutableListOf<EventItem>()
         try {
             val url = "https://www.shemsfm.net/fr/actualites/actualites-tunisie-news"
@@ -52,5 +52,34 @@ class PostRepository {
             e.printStackTrace()
         }
         return listData
+    }
+
+    fun getEvent(url: String): EventItem {
+        val item = EventItem()
+        try {
+            val document = Jsoup.connect(url).get()
+            val title = document.select("h1.title.lg-size.color_til")
+                .text()
+            val date = document.select("span")
+                .select("i")
+                .text()
+
+            val detail = document.select("div.contentBody")
+                .select("p")
+                .eq(1)//select one or all in cycle
+                .text()
+
+            val image = document.select("div.thumb")
+                .select("img")
+                .attr("src")
+
+            item.title = title
+            item.date = date
+            item.desc = detail
+            item.image = image
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        return item
     }
 }

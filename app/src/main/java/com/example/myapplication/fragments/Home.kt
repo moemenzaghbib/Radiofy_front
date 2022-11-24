@@ -1,4 +1,4 @@
-package com.example.myapplication.activities
+package com.example.myapplication.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapplication.R
 import com.example.myapplication.adapters.EventAdapter
-import com.example.myapplication.databinding.EventItemBinding
 import com.example.myapplication.databinding.FragmentHomeBinding
 import com.example.myapplication.viewmodels.EventViewModel
 

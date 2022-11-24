@@ -20,9 +20,18 @@ class EventViewModel: ViewModel() {
         // nekhthou data de facon async lehne
         viewModelScope.launch(IO) {
             // lezel el use mte3 el postValue khatar nekhdmou de faocn async
-            items.postValue(repo.getEvents())
+            items.postValue(repo.getEventsList())
 
         }
         return items
     }
+
+    fun fetchEvent(url: String): MutableLiveData<EventItem>{
+        val item = MutableLiveData<EventItem>()
+        viewModelScope.launch(IO) {
+            item.postValue(repo.getEvent(url))
+                    }
+        return item
+    }
+
 }

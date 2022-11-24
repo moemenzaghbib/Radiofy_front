@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+
 }
 
 android {
@@ -86,6 +88,13 @@ dependencies {
     //coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.8"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.8"
+
+//implemnting tghe fragement see for the navigation menu mobile by moemen
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
+    implementation "android.arch.navigation:navigation-ui:1.0.0"
+
+//    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20-RC"
+
 
 
 }

@@ -4,9 +4,12 @@ import android.content.Context
 import android.content.SyncAdapterType
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.BR
+import com.example.myapplication.activities.MainScreenActivity
 import com.example.myapplication.databinding.EventItemBinding
+import com.example.myapplication.fragments.HomeDirections
 import com.example.myapplication.models.EventItem
 import com.squareup.picasso.Picasso
 import java.text.FieldPosition
@@ -36,6 +39,17 @@ class EventAdapter(private val context: Context): RecyclerView.Adapter<EventAdap
             binding.setVariable(BR.item, item)
             //set Image
             Picasso.get().load(item.image).into(binding.imageView)
+
+            itemView.setOnClickListener {
+                // navigate to other fragment with Safe Args
+                val action = HomeDirections.actionHome2ToEventDetailFragment(item)
+                    //HomeDirections.actionHome2ToEventDetailFragment(item)
+                //findNavController().navigate(action)
+                findNavController().navigate(action)
+
+
+
+            }
         }
     }
 }

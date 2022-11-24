@@ -8,7 +8,7 @@
         <item name="android:layout_marginTop">460dp</item>
         <item name="android:layout_marginRight">20dp</item>
         <item name="android:backgroundTint">#77FFFFFF</item>
-        <item name="android:drawableTint">@android:color/transparent</item>
+<!--        <item name="android:drawableTint">@android:color/transparent</item>-->
         <item name="android:textColor">@color/black</item>
     </style>
     <style name="Widget.Theme.MyApplication.MyView" parent="">
