@@ -38,5 +38,8 @@
     <string name="timer_btn">Timer</string>
     <string name="share_bnt">Share</string>
     <string name="song_albums">Song Albums</string>
+    <string name="title_activity_chat_room_adapter">ChatRoomAdapter</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>
