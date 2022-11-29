@@ -2,6 +2,7 @@ package com.example.myapplication.activities
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
@@ -43,14 +44,14 @@ class ChatRoomActivity : AppCompatActivity(), View.OnClickListener {
         leave.setOnClickListener(this)
 
 //        Get the nickname and roomname from entrance activity.
-        try {
-            userName = intent.getStringExtra("userName")!!
-            roomName = intent.getStringExtra("roomName")!!
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-//        userName = "userName"
-//        roomName = "roomName"
+//        try {
+//            userName = intent.getStringExtra("userName")!!
+//            roomName = intent.getStringExtra("roomName")!!
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+        userName = "userName"
+        roomName = "roomName"
 
 
         //Set Chatroom adapter
@@ -70,13 +71,16 @@ class ChatRoomActivity : AppCompatActivity(), View.OnClickListener {
             e.printStackTrace()
             Log.d("fail", "Failed to connect")
         }
+//        val t = Thread()
+//        Thread {
+            Thread.sleep(1000)
+            mSocket.connect()
+            mSocket.on(Socket.EVENT_CONNECT, onConnect)
+            mSocket.on("newUserToChatRoom", onNewUser)
+            mSocket.on("updateChat", onUpdateChat)
+            mSocket.on("userLeftChatRoom", onUserLeft)        }
 
-        mSocket.connect()
-        mSocket.on(Socket.EVENT_CONNECT, onConnect)
-        mSocket.on("newUserToChatRoom", onNewUser)
-        mSocket.on("updateChat", onUpdateChat)
-        mSocket.on("userLeftChatRoom", onUserLeft)
-    }
+//    }
 
     var onUserLeft = Emitter.Listener {
         val leftUserName = it[0] as String
@@ -94,6 +98,7 @@ class ChatRoomActivity : AppCompatActivity(), View.OnClickListener {
         val data = initialData(userName, roomName)
         val jsonData = gson.toJson(data)
         mSocket.emit("subscribe", jsonData)
+//        Toast.makeText(applicationContext,"this is where we connect",Toast.LENGTH_SHORT).show()
 
     }
 

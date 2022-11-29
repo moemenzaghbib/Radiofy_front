@@ -72,7 +72,7 @@ class MainScreenActivity : AppCompatActivity() {
 ////                    true
 ////                }
                R.id.home1 -> {
-                   startActivity(Intent(this, EntranceActivity ::class.java).apply {
+                   startActivity(Intent(this, ChatRoomActivity ::class.java).apply {
 //                       putExtra("login" , loginIntent)
                    })
 
