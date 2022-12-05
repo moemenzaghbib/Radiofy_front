@@ -55,9 +55,11 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
     @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setTheme(MusicActivity.currentTheme[MusicActivity.themeIndex])
         binding = ActivityPlayerBinding.inflate(layoutInflater)
+//        supportActionBar?.hide()
         setContentView(binding.root)
         if(intent.data?.scheme.contentEquals("content")){
             songPosition = 0;
