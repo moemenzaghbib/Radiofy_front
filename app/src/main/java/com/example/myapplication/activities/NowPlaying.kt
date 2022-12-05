@@ -16,6 +16,7 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentNowPlayingBinding
 
 class NowPlaying : Fragment() {
+
     companion object{
         @SuppressLint("StaticFieldLeak")
         lateinit var binding: FragmentNowPlayingBinding

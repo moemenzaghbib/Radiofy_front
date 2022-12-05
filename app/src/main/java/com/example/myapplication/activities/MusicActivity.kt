@@ -24,7 +24,7 @@ import java.io.File
 
 class MusicActivity : AppCompatActivity() {
 
-private lateinit var binding: ActivityMusicBinding
+    private lateinit var binding: ActivityMusicBinding
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var musicAdapter: MusicAdapter
 
@@ -34,13 +34,12 @@ private lateinit var binding: ActivityMusicBinding
         var search: Boolean = false
         var themeIndex: Int = 0
         val currentTheme = arrayOf( R.style.coolBlue, R.style.coolPurple, R.style.coolGreen, R.style.coolBlack)
-        val currentThemeNav = arrayOf( R.style.coolBlueNav, R.style.coolPurpleNav, R.style.coolGreenNav,
+        val currentThemeNav = arrayOf(R.style.coolPinkNav, R.style.coolBlueNav, R.style.coolPurpleNav, R.style.coolGreenNav,
             R.style.coolBlackNav)
-        val currentGradient = arrayOf( R.drawable.gradient_blue, R.drawable.gradient_purple, R.drawable.gradient_green,
+        val currentGradient = arrayOf(R.drawable.gradient_pink, R.drawable.gradient_blue, R.drawable.gradient_purple, R.drawable.gradient_green,
             R.drawable.gradient_black)
         var sortOrder: Int = 0
-        val sortingList = arrayOf(
-            MediaStore.Audio.Media.DATE_ADDED + " DESC", MediaStore.Audio.Media.TITLE,
+        val sortingList = arrayOf(MediaStore.Audio.Media.DATE_ADDED + " DESC", MediaStore.Audio.Media.TITLE,
             MediaStore.Audio.Media.SIZE + " DESC")
     }
 
@@ -49,7 +48,7 @@ private lateinit var binding: ActivityMusicBinding
         super.onCreate(savedInstanceState)
         val themeEditor = getSharedPreferences("THEMES", MODE_PRIVATE)
         themeIndex = themeEditor.getInt("themeIndex", 0)
-        //setTheme(currentThemeNav[themeIndex])
+        setTheme(currentThemeNav[themeIndex])
         binding = ActivityMusicBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //for nav drawer
@@ -72,9 +71,53 @@ private lateinit var binding: ActivityMusicBinding
                 val data: ArrayList<Music> = GsonBuilder().create().fromJson(jsonString, typeToken)
                 //   FavouriteActivity.favouriteSongs.addAll(data)
             }
-
+//            PlaylistActivity.musicPlaylist = MusicPlaylist()
+//            val jsonStringPlaylist = editor.getString("MusicPlaylist", null)
+//            if(jsonStringPlaylist != null){
+//                val dataPlaylist: MusicPlaylist = GsonBuilder().create().fromJson(jsonStringPlaylist, MusicPlaylist::class.java)
+//                PlaylistActivity.musicPlaylist = dataPlaylist
+//            }
         }
 
+//        binding.shuffleBtn.setOnClickListener {
+//            val intent = Intent(this@MainActivity, PlayerActivity::class.java)
+//            intent.putExtra("index", 0)
+//            intent.putExtra("class", "MainActivity")
+//            startActivity(intent)
+//        }
+//        binding.favouriteBtn.setOnClickListener {
+//            startActivity(Intent(this@MainActivity, FavouriteActivity::class.java))
+//        }
+//        binding.playlistBtn.setOnClickListener {
+//            startActivity(Intent(this@MainActivity, PlaylistActivity::class.java))
+//        }
+//        binding.playNextBtn.setOnClickListener {
+//            startActivity(Intent(this@MainActivity, PlayNext::class.java))
+//        }
+//        binding.navView.setNavigationItemSelectedListener{
+//            when(it.itemId)
+//            {
+//                R.id.navFeedback -> startActivity(Intent(this@MainActivity, FeedbackActivity::class.java))
+//                R.id.navSettings -> startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
+//                R.id.navAbout -> startActivity(Intent(this@MainActivity, AboutActivity::class.java))
+//                R.id.navExit -> {
+//                    val builder = MaterialAlertDialogBuilder(this)
+//                    builder.setTitle("Exit")
+//                        .setMessage("Do you want to close app?")
+//                        .setPositiveButton("Yes"){ _, _ ->
+//                            exitApplication()
+//                        }
+//                        .setNegativeButton("No"){dialog, _ ->
+//                            dialog.dismiss()
+//                        }
+//                    val customDialog = builder.create()
+//                    customDialog.show()
+//
+//                    setDialogBtnBackground(this, customDialog)
+//                }
+//            }
+//            true
+//        }
     }
     //For requesting permission
     private fun requestRuntimePermission() :Boolean{
@@ -91,7 +134,7 @@ private lateinit var binding: ActivityMusicBinding
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if(requestCode == 13){
             if(grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Permission Granted",Toast.LENGTH_SHORT).show()
                 initializeLayout()
             }
             else
@@ -99,7 +142,11 @@ private lateinit var binding: ActivityMusicBinding
         }
     }
 
-
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        if(toggle.onOptionsItemSelected(item))
+//            return true
+//        return super.onOptionsItemSelected(item)
+//    }
 
     @RequiresApi(Build.VERSION_CODES.R)
     @SuppressLint("SetTextI18n")
@@ -128,12 +175,10 @@ private lateinit var binding: ActivityMusicBinding
     private fun getAllAudio(): ArrayList<Music>{
         val tempList = ArrayList<Music>()
         val selection = MediaStore.Audio.Media.IS_MUSIC +  " != 0"
-        val projection = arrayOf(
-            MediaStore.Audio.Media._ID, MediaStore.Audio.Media.TITLE, MediaStore.Audio.Media.ALBUM,
-            MediaStore.Audio.Media.ARTIST, MediaStore.Audio.Media.DURATION, MediaStore.Audio.Media.DATE_ADDED,
+        val projection = arrayOf(MediaStore.Audio.Media._ID,MediaStore.Audio.Media.TITLE,MediaStore.Audio.Media.ALBUM,
+            MediaStore.Audio.Media.ARTIST,MediaStore.Audio.Media.DURATION,MediaStore.Audio.Media.DATE_ADDED,
             MediaStore.Audio.Media.DATA, MediaStore.Audio.Media.ALBUM_ID)
-        val cursor = this.contentResolver.query(
-            MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection,selection,null,
+        val cursor = this.contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection,selection,null,
             sortingList[sortOrder], null)
         if(cursor != null){
             if(cursor.moveToFirst())

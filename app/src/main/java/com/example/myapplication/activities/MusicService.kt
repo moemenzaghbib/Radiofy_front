@@ -18,9 +18,10 @@ import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
 
-class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
+
+class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
     private var myBinder = MyBinder()
-    var mediaPlayer: MediaPlayer? = null
+    var mediaPlayer:MediaPlayer? = null
     private lateinit var mediaSession : MediaSessionCompat
     private lateinit var runnable: Runnable
     lateinit var audioManager: AudioManager
@@ -30,7 +31,7 @@ class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
         return myBinder
     }
 
-    inner class MyBinder: Binder(){
+    inner class MyBinder:Binder(){
         fun currentService(): MusicService {
             return this@MusicService
         }
@@ -179,4 +180,5 @@ class MusicService : Service(), AudioManager.OnAudioFocusChangeListener {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         return START_STICKY
     }
+
 }

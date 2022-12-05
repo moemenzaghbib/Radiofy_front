@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivitySelectionBinding
 
-class SelectionAcitvity : AppCompatActivity() {
+class SelectionActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivitySelectionBinding
     private lateinit var adapter: MusicAdapter
 

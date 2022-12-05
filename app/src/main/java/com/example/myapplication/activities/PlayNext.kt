@@ -8,6 +8,7 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityPlayNextBinding
 
 class PlayNext : AppCompatActivity() {
+
     companion object{
         var playNextList: ArrayList<Music> = ArrayList()
     }
