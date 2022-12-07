@@ -1,5 +1,6 @@
 package com.example.myapplication.utils
 import android.provider.ContactsContract
+import com.example.myapplication.models.EventItem
 import com.example.myapplication.models.User
 import com.example.myapplication.models.data
 import okhttp3.Response
@@ -29,20 +30,29 @@ interface ApiInterface {
     @POST("signin")
     fun signin(@Body map: HashMap<String ,String>):Call<User>
 
-    @POST("signup")
+    @POST("user/signup")
     fun register(@Body map: HashMap<String ,String>):Call<User>
 
-    @POST("googleVerifier")
+    @POST("user/googleVerifier")
     fun googleVerifier(@Body map: HashMap<String ,String>):Call<User>
 
-    @POST("googleSignIn")
+    @POST("user/googleSignIn")
     fun googleSignIn(@Body map: HashMap<String ,String>):Call<User>
 
-    @POST("googleSignup")
+    @POST("user/googleSignup")
     fun googleSignUp(@Body map: HashMap<String ,String>):Call<User>
 
-    @POST("forgot")
+    @POST("user/forgot")
     fun forgotPassword(@Body map: HashMap<String, String>):Call<data>
+
+    @POST("post/post_verifier")
+    fun postVerifier(@Body map: HashMap<String, String>):Call<EventItem>
+
+    @POST("post/post_post")
+    fun postPost(@Body map: HashMap<String, String>):Call<EventItem>
+
+    @GET("post/getAll")
+    fun getALlPosts():Call<List<EventItem>>
 
 
 
@@ -56,7 +66,7 @@ interface ApiInterface {
 
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("http://10.0.2.2:9090/user/")
+            .baseUrl("http://10.0.2.2:9090/")
             //.baseUrl("http://172.18.6.30:9090/")
 
             .build()

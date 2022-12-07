@@ -2,6 +2,7 @@ package com.example.myapplication.adapters
 
 import android.content.Context
 import android.content.SyncAdapterType
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
@@ -28,6 +29,7 @@ class EventAdapter(private val context: Context): RecyclerView.Adapter<EventAdap
 
     }
     override fun getItemCount(): Int {
+        Log.e("nbre",items.size.toString())
         return items.size
     }
     override fun onBindViewHolder(holder: EventAdapter.ViewHolder, position: Int)  =holder.bind(items[position])
@@ -45,7 +47,7 @@ class EventAdapter(private val context: Context): RecyclerView.Adapter<EventAdap
                 val action = HomeDirections.actionHome2ToEventDetailFragment(item)
                     //HomeDirections.actionHome2ToEventDetailFragment(item)
                 //findNavController().navigate(action)
-                findNavController().navigate(action)
+//                findNavController().navigate(action)
 
 
 
