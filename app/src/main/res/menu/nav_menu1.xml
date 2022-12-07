@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/Home"
+        android:icon="@drawable/home"
+        android:title="Home"
+        />
+
+    <item android:id="@+id/Chat"
+        android:icon="@drawable/icon_chat"
+        android:title="Chat"/>
+    <item android:id="@+id/Musicr"
+        android:icon="@drawable/icon_music"
+        android:title="Music"/>
+    <item android:id="@+id/Radio"
+        android:icon="@drawable/icon_radio"
+        android:title="Radio"/>
+    <item android:id="@+id/Profil"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile"/>
+
+</menu>

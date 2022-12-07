@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 
 import com.example.myapplication.R
-import com.example.myapplication.databinding.ActivityFavouriteBinding
+
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.viewmodels.EventViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignInClient

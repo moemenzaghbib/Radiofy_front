@@ -9,7 +9,8 @@
     tools:openDrawer="start"
     android:id="@+id/drawer"
     android:background="@drawable/back_ground_image"
-    tools:context=".activities.MusicPlayer">
+
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,37 +22,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
-            <!--for button shuffle-->
-            <Button
-                android:id="@+id/shufflebtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="@string/shuffle_btn"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:drawableTop="@drawable/shuffle_icon"
-                android:text="@string/shuffle_btn"/>
-            <!--for buttons Favourites-->
-            <Button
-                android:id="@+id/favouritebtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="@string/favourites_btn"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:drawableTop="@drawable/favorite_icon"
-                android:text="@string/favourites_btn"/>
-            <!--for buttons playlist-->
-            <Button
-                android:id="@+id/palylistbtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="@string/playlist_btn"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:drawableTop="@drawable/library_music_icon"
-                android:text="@string/playlist_btn"/>
-        </LinearLayout>
+      </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
