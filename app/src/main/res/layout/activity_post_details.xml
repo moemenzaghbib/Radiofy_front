@@ -13,13 +13,13 @@
             android:orientation="vertical"
             tools:ignore="MissingConstraints">
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imagedetailPost"
                 android:layout_width="match_parent"
                 android:layout_height="193dp"
                 android:src="#888888"
                 android:scaleType="centerCrop"/>
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/TitleTextView"
+                android:id="@+id/titledetaillPost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
@@ -28,7 +28,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="12dp"/>
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/DateTextView"
+                android:id="@+id/datedetailPost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -36,7 +36,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="12dp"/>
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/detailTextView"
+                android:id="@+id/descdetailPost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"

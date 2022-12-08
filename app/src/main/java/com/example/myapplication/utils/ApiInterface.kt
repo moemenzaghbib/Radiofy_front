@@ -54,6 +54,9 @@ interface ApiInterface {
     @GET("post/getAll")
     fun getALlPosts():Call<List<EventItem>>
 
+    @POST("post/GetOnePost")
+    fun getPost(@Body map: HashMap<String,String>):Call<EventItem>
+
 
 
 

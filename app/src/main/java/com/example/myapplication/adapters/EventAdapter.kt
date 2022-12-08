@@ -1,6 +1,7 @@
 package com.example.myapplication.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.content.SyncAdapterType
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,10 +10,13 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.BR
 import com.example.myapplication.activities.MainScreenActivity
+import com.example.myapplication.activities.PostDetails
 import com.example.myapplication.databinding.EventItemBinding
+import com.example.myapplication.fragments.EventDetailFragment
 import com.example.myapplication.fragments.HomeDirections
 import com.example.myapplication.models.EventItem
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.event_item.view.*
 import java.text.FieldPosition
 
 class EventAdapter(private val context: Context): RecyclerView.Adapter<EventAdapter.ViewHolder>() {
@@ -44,9 +48,11 @@ class EventAdapter(private val context: Context): RecyclerView.Adapter<EventAdap
 
             itemView.setOnClickListener {
                 // navigate to other fragment with Safe Args
-                val action = HomeDirections.actionHome2ToEventDetailFragment(item)
-                    //HomeDirections.actionHome2ToEventDetailFragment(item)
-                //findNavController().navigate(action)
+               val intent = Intent(itemView.context,PostDetails::class.java )
+                intent.apply {
+                    putExtra("title",item.title.toString() )
+                }
+                itemView.context.startActivity(intent)
 //                findNavController().navigate(action)
 
 

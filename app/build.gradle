@@ -6,6 +6,10 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'kotlin-kapt'
+task wrapper(type: Wrapper){
+    gradleVersion = '7.2'
+}
+tasks.register("prepareKotlinBuildScriptModel"){}
 
 /*plugins {
     id 'com.android.application'

@@ -14,10 +14,11 @@ import retrofit2.Response
 import java.io.IOException
 
 class PostRepository {
-
+    val apiInterface = ApiInterface.create()
     companion object{
         var instance: PostRepository? = null
         lateinit var mContext: Context
+        lateinit var title: String
     }
 
     fun getInstance(context: Context): PostRepository {
@@ -29,7 +30,6 @@ class PostRepository {
 
     fun getEventsList(): MutableList<EventItem> {
         var listData = mutableListOf<EventItem>()
-        val apiInterface = ApiInterface.create()
 
         try {
             //lehne bech ysir fetch data shemsfm
