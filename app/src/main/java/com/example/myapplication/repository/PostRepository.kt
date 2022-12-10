@@ -282,7 +282,9 @@ class PostRepository {
             }
 
             override fun onFailure(call: Call<List<EventItem>>, t: Throwable) {
-                TODO("Not yet implemented")
+               // TODO("Not yet implemented")
+                // kamalha mara okhra bech ta3em cnx m3a lbase :)
+                println(" ")
             }
         })
 //        print(listData)
