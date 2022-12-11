@@ -1,6 +1,7 @@
 package com.example.myapplication.viewmodels
 
 import android.content.Context
+import android.os.Bundle
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,12 +12,14 @@ import kotlinx.coroutines.launch
 
 class EventViewModel: ViewModel() {
     var items: MutableLiveData<MutableList<EventItem>> = MutableLiveData()
-    fun init (context: Context) {
+    fun init (context: Context)
+    {
         if (items.value != null )
             return
     }
     private val repo = PostRepository()
     fun fetchData(): MutableLiveData<MutableList<EventItem>> {
+
         // nekhthou data de facon async lehne
         viewModelScope.launch(IO) {
             // lezel el use mte3 el postValue khatar nekhdmou de faocn async

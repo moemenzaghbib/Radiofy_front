@@ -40,14 +40,23 @@ class MainScreenActivity : AppCompatActivity() {
     lateinit var name_view_menu: TextView
 
 
+
     private lateinit var binding: ActivityMainScreenBinding
-    private val  viewModel by lazy {  ViewModelProvider(this).get(EventViewModel::class.java) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main_screen)
         val bundle: Bundle? = intent.extras
         val email = bundle?.get("email")
+//        val  viewModel by lazy {  /*ViewModelProvider(this).get(EventViewModel::class.java)*/
+//            val intent = Intent(this@MainScreenActivity, EventViewModel::class.java).apply {
+//                putExtra("email",email.toString())
+//                Log.e("hamma ytesti lehne",email.toString())
+//
+//            }
+//            startActivity(intent)
+//        }
+
         val firstname = bundle?.get("firstname")
         Log.e("email", email.toString())
         val lastname = bundle?.get("lastname")

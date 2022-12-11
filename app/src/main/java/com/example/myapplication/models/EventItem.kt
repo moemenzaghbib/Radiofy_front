@@ -7,4 +7,5 @@ data class EventItem(
     var desc: String = "",
     var image: String = "",
     var url: String = "",
+    var likes: String = "",
 )

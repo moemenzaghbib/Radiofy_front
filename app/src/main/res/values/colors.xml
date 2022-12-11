@@ -29,6 +29,8 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
     <color name="cool_pink">#F50057</color>
+    <color name="like_false">#CADBFB</color>
+    <color name="like_true">#5089fa</color>
 
 
 </resources>

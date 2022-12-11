@@ -16,15 +16,16 @@ import com.example.myapplication.fragments.EventDetailFragment
 import com.example.myapplication.fragments.HomeDirections
 import com.example.myapplication.models.EventItem
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.event_item.view.*
 import java.text.FieldPosition
 
 class EventAdapter(private val context: Context): RecyclerView.Adapter<EventAdapter.ViewHolder>() {
 
     private var items = mutableListOf<EventItem>()
-    fun setListData(data: MutableList<EventItem>) {
-        items = data
-        notifyDataSetChanged()
+        fun setListData(data: MutableList<EventItem>) {
+            items = data
+            notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventAdapter.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -48,9 +49,11 @@ class EventAdapter(private val context: Context): RecyclerView.Adapter<EventAdap
 
             itemView.setOnClickListener {
                 // navigate to other fragment with Safe Args
+                println("teeeeeeest"+context.applicationContext)
                val intent = Intent(itemView.context,PostDetails::class.java )
                 intent.apply {
                     putExtra("title",item.title.toString() )
+//                    putExtra("userEmail",)
                 }
                 itemView.context.startActivity(intent)
 //                findNavController().navigate(action)
