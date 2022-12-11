@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.event_item.view.*
 import java.text.FieldPosition
 
-class EventAdapter(private val context: Context): RecyclerView.Adapter<EventAdapter.ViewHolder>() {
+class EventAdapter(private val context: Context,val email_user: String): RecyclerView.Adapter<EventAdapter.ViewHolder>() {
 
     private var items = mutableListOf<EventItem>()
         fun setListData(data: MutableList<EventItem>) {
@@ -49,11 +49,11 @@ class EventAdapter(private val context: Context): RecyclerView.Adapter<EventAdap
 
             itemView.setOnClickListener {
                 // navigate to other fragment with Safe Args
-                println("teeeeeeest"+context.applicationContext)
+                println("teeeeeeest"+email_user)
                val intent = Intent(itemView.context,PostDetails::class.java )
                 intent.apply {
                     putExtra("title",item.title.toString() )
-//                    putExtra("userEmail",)
+                    putExtra("email",email_user.toString())
                 }
                 itemView.context.startActivity(intent)
 //                findNavController().navigate(action)

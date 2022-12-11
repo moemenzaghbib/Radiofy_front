@@ -29,7 +29,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 
-
+const val EMAIL = "email"
 class SignInActivity : AppCompatActivity() {
 
     lateinit var txtEmail: TextInputEditText
@@ -123,7 +123,7 @@ class SignInActivity : AppCompatActivity() {
                             if (checkRememberMe.isChecked) {
                             mSharedPref.edit().apply {
                                 putBoolean("IS_REMEMBRED", true)
-                                putString("email", txtEmail.text.toString())
+                                putString("email", map["email"])
                                 putString("password", txtpassword.text.toString())
                             }.apply()
                         } else {
@@ -138,7 +138,7 @@ class SignInActivity : AppCompatActivity() {
                             Log.e("email chytbth",user?.email.toString())
                             val intent = Intent(this@SignInActivity, MainScreenActivity::class.java)
 
-                                .putExtra("email", user?.email.toString())
+                                .putExtra("email", map["email"])
                                 .putExtra("firstname", user?.firstname.toString())
                                 .putExtra("lastname", user?.lastname.toString())
 

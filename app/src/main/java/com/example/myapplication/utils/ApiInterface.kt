@@ -61,6 +61,12 @@ interface ApiInterface {
     @PUT("post/AddLikePost")
     fun AddLikePost(@Body map: HashMap<String, String>):Call<data>
 
+    @PUT("post/RemoveLikePost")
+    fun RemoveLikePost(@Body map: HashMap<String,String>):Call<data>
+
+    @POST("user/checkLikeUser")
+    fun checkLikeUser(@Body map: HashMap<String, String>):Call<data>
+
 
 
 

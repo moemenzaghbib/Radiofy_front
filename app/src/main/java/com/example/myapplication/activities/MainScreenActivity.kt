@@ -17,12 +17,17 @@ import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
 import android.os.Bundle
 import android.util.Log
+import android.widget.FrameLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentContainerView
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.example.myapplication.EditProfile.Companion.newInstance
 import com.example.myapplication.databinding.ActivityMainScreenBinding
 import com.example.myapplication.fragments.Home
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -38,6 +43,7 @@ class MainScreenActivity : AppCompatActivity() {
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     lateinit var email_view_menu: TextView
     lateinit var name_view_menu: TextView
+    lateinit var posts_fragment: FragmentContainerView
 
 
 
@@ -47,7 +53,7 @@ class MainScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main_screen)
         val bundle: Bundle? = intent.extras
-        val email = bundle?.get("email")
+        val email = intent.getStringExtra("email").toString()
 //        val  viewModel by lazy {  /*ViewModelProvider(this).get(EventViewModel::class.java)*/
 //            val intent = Intent(this@MainScreenActivity, EventViewModel::class.java).apply {
 //                putExtra("email",email.toString())
@@ -61,6 +67,12 @@ class MainScreenActivity : AppCompatActivity() {
         Log.e("email", email.toString())
         val lastname = bundle?.get("lastname")
         appbark = findViewById(R.id.bottomAppBar2)
+        changeFragment(Home.newInstance(email.toString()),"")
+
+
+
+
+
         appbark!!.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
 ////                R.id.profile -> {
@@ -117,6 +129,16 @@ class MainScreenActivity : AppCompatActivity() {
 //        }.start()
 
     }
+    private fun changeFragment(fragment: Fragment, name: String) {
+        if (name.isEmpty())
+            supportFragmentManager.beginTransaction().replace(R.id.frag_home, fragment)
+                .commit()
+        else {
+            supportFragmentManager.beginTransaction().replace(R.id.frag_home, fragment)
+                .addToBackStack(name).commit()
+        }
+    }
+
 }
 
 

@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.myapplication.R
 import com.example.myapplication.models.EventItem
+import com.example.myapplication.models.data
 import com.example.myapplication.utils.ApiInterface
 import com.squareup.picasso.Picasso
 import retrofit2.Call
@@ -39,9 +40,13 @@ class PostDetails : AppCompatActivity() {
         val map: HashMap<String, String> = HashMap()
         map["title"] = title.toString()
         val bundle: Bundle? = intent.extras
-        val email = bundle?.get("email")
-        map["userEmail"] = email.toString()
-        println(map)
+        val email = intent.getStringExtra("email").toString()
+        println("ya moemen ija chouf lehne ken mawjouda wala la \n"+email)
+
+        val maplike: HashMap<String, String> = HashMap()
+        maplike["title"]= title.toString()
+        maplike["email"]= email.toString()
+
         apiInterface.getPost(map).enqueue(object: Callback<EventItem> {
             override fun onResponse(call: Call<EventItem>, response: Response<EventItem>) {
                 val post = response.body()
@@ -52,6 +57,24 @@ class PostDetails : AppCompatActivity() {
                     datedetailPost.text=post.date
                     likes_count.text=post.likes
                     Picasso.get().load(post.image).into(imagedetailPost)
+                    apiInterface.checkLikeUser(maplike).enqueue(object: Callback<data>{
+                        override fun onResponse(call: Call<data>, response: Response<data>) {
+                            var liked = response.body()
+                            if(liked!=null){
+                                println(liked.value)
+                                if(liked.value == "true"){
+
+                                    cliked=true;
+                                    like_button.setImageResource(R.drawable.black_like_icon_png_13)
+                                }
+                            }
+                        }
+
+                        override fun onFailure(call: Call<data>, t: Throwable) {
+                            Log.e("hamma","ya hamma rahi khlet fil ligne 66")
+                        }
+
+                    })
                 }
             }
 
@@ -67,14 +90,38 @@ class PostDetails : AppCompatActivity() {
 
             if(!cliked){
             like_button.setImageResource(R.drawable.black_like_icon_png_13)
-//                val maplike: HashMap<String, String> = HashMap()
-//                map["title"]= titledetaillPost.text.toString()
-//                map["email"]=
-//            apiInterface.AddLikePost()
-//                println(cliked)
+
+
+
+                apiInterface.AddLikePost(maplike).enqueue(object: Callback<data> {
+                    override fun onResponse(call: Call<data>, response: Response<data>) {
+                        var new_like = response.body()
+                        if(new_like!=null){
+                            println("hethi respone te3 el like add \n"+new_like.value)
+                            likes_count.text = new_like.value
+                        }
+                    }
+
+                    override fun onFailure(call: Call<data>, t: Throwable) {
+                        Log.e("ya hamma rahi","KHLEEEEEET ")
+                    }
+                })
             cliked = true}
             else if(cliked){
                 like_button.setImageResource(R.drawable.black_like_icon_png_12)
+                apiInterface.RemoveLikePost(maplike).enqueue(object: Callback<data> {
+                    override fun onResponse(call: Call<data>, response: Response<data>) {
+                        var new_like = response.body()
+                        if(new_like!=null){
+                            println("hethi respone te3 el like remove \n"+new_like.value)
+                            likes_count.text = new_like.value
+                        }
+                    }
+
+                    override fun onFailure(call: Call<data>, t: Throwable) {
+                        Log.e("ya hamma rahi","KHLEEEEEET ")
+                    }
+                })
                 println(cliked)
             cliked = false}
 
