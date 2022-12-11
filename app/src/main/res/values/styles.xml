@@ -69,4 +69,8 @@
         <item name="cornerRadius">16dp</item>
         <item name="cornerFamilyTopRight">rounded</item>
     </style>
+    <!-- Override background color and button color in AlertDialog -->
+    <style name="AlertDialogTheme" parent="ThemeOverlay.Material3.Dialog.Alert">
+        <item name="colorSurface">@color/dialog_background</item>
+    </style>
 </resources>
