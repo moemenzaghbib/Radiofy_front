@@ -4,14 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="450dp"
+            android:layout_height="454dp"
             android:orientation="vertical"
             tools:ignore="MissingConstraints">
 
@@ -23,48 +24,9 @@
                 android:src="#888888" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_weight="0.25"
-                    android:text="likes:"
-
-                    />
-
-                <TextView
-                    android:id="@+id/likes_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginEnd="16dp"
-
-                    android:layout_weight="1"
-                    android:text="0"
-
-                    />
-
-                <ImageView
-                    android:id="@+id/like_button"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-
-                    android:layout_weight="1"
-
-                    android:src="@drawable/black_like_icon_png_12" />
 
 
-            </LinearLayout>
-
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            <TextView
                 android:id="@+id/titledetaillPost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,7 +37,7 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            <TextView
                 android:id="@+id/datedetailPost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,7 +47,7 @@
                 android:text=""
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            <TextView
                 android:id="@+id/descdetailPost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -98,61 +60,98 @@
 
 
         </LinearLayout>
+
         <FrameLayout
             android:id="@+id/progressLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".fragments.EventDetailFragment"
             android:background="#ffffff"
             android:visibility="gone">
+
             <ProgressBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:indeterminate="true"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:indeterminate="true" />
 
         </FrameLayout>
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="60dp"
+            android:layout_gravity="end">
 
+
+
+            <TextView
+                android:id="@+id/likes_count"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="0"
+
+                />
+
+            <ImageView
+                android:id="@+id/like_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+
+                android:layout_weight="1"
+
+                android:src="@drawable/black_like_icon_png_12" />
+
+
+        </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/commentsRecycleView"
-            android:layout_width="374dp"
-            android:layout_height="187dp"
+            android:layout_width="384dp"
+            android:layout_height="105dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            android:layout_marginEnd="8dp" />
 
-        <Button
-            android:id="@+id/post_comment_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="POST"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/commentsRecycleView"
-            app:layout_constraintVertical_bias="0.2" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/comment_input_layout"
-            android:layout_width="269dp"
+        <LinearLayout
+            android:layout_width="400dp"
             android:layout_height="52dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintEnd_toStartOf="@+id/post_comment_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/commentsRecycleView">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/comment_input"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Post your comment!" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/comment_input_layout"
+                android:layout_width="300dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="4dp"
+               >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/comment_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:hint="Post your comment!"
+                    android:background="@drawable/rounded_edittext"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/post_comment_button"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/commentaires" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 </layout>

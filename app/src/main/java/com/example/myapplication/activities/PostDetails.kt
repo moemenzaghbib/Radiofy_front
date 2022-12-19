@@ -36,7 +36,7 @@ class PostDetails : AppCompatActivity() {
     var cliked : Boolean = false
     lateinit var likes_count : TextView
     lateinit var comment_input : TextInputEditText
-    lateinit var comment_post : Button
+    lateinit var comment_post : ImageView
     lateinit var comment_input_layout : TextInputLayout
     val apiInterface = ApiInterface.create()
 
