@@ -2,28 +2,34 @@ package com.example.myapplication.activities
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
-import com.example.myapplication.models.Message
-import com.example.myapplication.models.MessageType
-import com.example.myapplication.models.SendMessage
-import com.example.myapplication.models.initialData
+import com.example.myapplication.adapters.CurrentUsersAdapter
+import com.example.myapplication.models.*
+import com.example.myapplication.utils.ApiInterface
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.gson.Gson
 import com.junga.socketio_android.ChatRoomAdapter
 import io.socket.client.IO
 import io.socket.client.Socket
 import io.socket.emitter.Emitter
 import kotlinx.android.synthetic.main.activity_chat_room.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class ChatRoomActivity : AppCompatActivity(), View.OnClickListener {
 
 
     val TAG = ChatRoomActivity::class.java.simpleName
-
-
+    lateinit var recyclerCurrentUser: RecyclerView
+    lateinit var recyclerCurrentUsersAdapter: CurrentUsersAdapter
+//    lateinit var current_users : Button
     lateinit var mSocket: Socket;
     lateinit var userName: String;
     lateinit var roomName: String;
@@ -34,11 +40,45 @@ class ChatRoomActivity : AppCompatActivity(), View.OnClickListener {
     //For setting the recyclerView.
     val chatList: ArrayList<Message> = arrayListOf();
     lateinit var chatRoomAdapter: ChatRoomAdapter
-
+    val apiInterface = ApiInterface.create()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_room)
 
+        recyclerCurrentUser = findViewById(R.id.recyclerCurrentUser)
+        val map_current_users: HashMap<String, String> = HashMap()
+        val email = intent.getStringExtra("email")!!
+        map_current_users["email"] = "ShemsFM@ShemsFM.tn"
+        println("map_current_users")
+        apiInterface.GetAllConnectedUsers(map_current_users).enqueue(object:
+            Callback<ArrayList<data>> {
+            override fun onResponse(
+                call: Call<ArrayList<data>>,
+                response: Response<ArrayList<data>>
+            ) {
+                val users = response.body()
+                if(users!=null){
+
+                    val list1 = mutableListOf<current_user>()
+
+                    for(i in users){
+                        list1.add(current_user(i.key.toString(),i.value.toString()))
+
+                    }
+
+                    recyclerCurrentUsersAdapter = CurrentUsersAdapter(list1)
+                    recyclerCurrentUser.adapter = recyclerCurrentUsersAdapter
+                    recyclerCurrentUser.layoutManager = LinearLayoutManager(this@ChatRoomActivity, LinearLayoutManager.VERTICAL ,false)
+
+                }
+            }
+
+            override fun onFailure(call: Call<ArrayList<data>>, t: Throwable) {
+                println("khlet commnttr")
+            }
+
+
+        })
 
         send.setOnClickListener(this)
         leave.setOnClickListener(this)
@@ -78,7 +118,10 @@ class ChatRoomActivity : AppCompatActivity(), View.OnClickListener {
             mSocket.on(Socket.EVENT_CONNECT, onConnect)
             mSocket.on("newUserToChatRoom", onNewUser)
             mSocket.on("updateChat", onUpdateChat)
-            mSocket.on("userLeftChatRoom", onUserLeft)        }
+            mSocket.on("userLeftChatRoom", onUserLeft)
+
+
+    }
 
 //    }
 

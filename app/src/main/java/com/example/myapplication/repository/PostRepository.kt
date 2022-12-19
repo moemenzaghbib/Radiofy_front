@@ -106,7 +106,8 @@ class PostRepository {
                         Log.e("problem_postVerifier","mehbtch tetada l cnx ma el backServer")
                     }
                 })
-                listData.add(EventItem(i,title,date,desc,image,eventUrl))
+
+                listData.add(EventItem(i,title,date,desc,image,eventUrl,))
 
             }
             //lehne youfa fetch data shemsfm

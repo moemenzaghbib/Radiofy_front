@@ -1,5 +1,6 @@
 package com.example.myapplication.utils
 import android.provider.ContactsContract
+import com.example.myapplication.models.Comment
 import com.example.myapplication.models.EventItem
 import com.example.myapplication.models.User
 import com.example.myapplication.models.data
@@ -66,6 +67,15 @@ interface ApiInterface {
 
     @POST("user/checkLikeUser")
     fun checkLikeUser(@Body map: HashMap<String, String>):Call<data>
+
+    @POST("post/allcomments")
+    fun getComments(@Body map: HashMap<String, String>):Call<ArrayList<data>>
+
+    @POST("post/addComment")
+    fun addComment(@Body map: HashMap<String, String>):Call<ArrayList<data>>
+
+    @POST("chatRoom/GetAllConnectedUsers")
+    fun GetAllConnectedUsers(@Body map: HashMap<String, String>):Call<ArrayList<data>>
 
 
 

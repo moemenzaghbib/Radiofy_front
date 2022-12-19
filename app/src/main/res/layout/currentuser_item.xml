@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/userEmail_currentUser"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+
+            android:text="userEmail" />
+
+        <TextView
+            android:id="@+id/userName_currentUser"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:text="userName" /></LinearLayout>
+
+    <Button
+        android:id="@+id/banne_user_button"
+        android:layout_width="46dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/colorPrimary"
+
+        android:text="X" />
+</LinearLayout>

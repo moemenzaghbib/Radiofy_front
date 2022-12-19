@@ -94,7 +94,7 @@ class MainScreenActivity : AppCompatActivity() {
 ////                }
                R.id.home1 -> {
                    startActivity(Intent(this, ChatRoomActivity ::class.java).apply {
-//                       putExtra("login" , loginIntent)
+                       putExtra("email" ,  email.toString())
                    })
 
                    true

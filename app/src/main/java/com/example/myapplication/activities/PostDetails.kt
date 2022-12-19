@@ -4,18 +4,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Log.WARN
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.adapters.CommentAdapter
+import com.example.myapplication.adapters.CurrentUsersAdapter
+import com.example.myapplication.models.Comment
 import com.example.myapplication.models.EventItem
+import com.example.myapplication.models.current_user
 import com.example.myapplication.models.data
 import com.example.myapplication.utils.ApiInterface
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class PostDetails : AppCompatActivity() {
+    lateinit var recylcerComments: RecyclerView
+
+    lateinit var recylcerCommentsAdapter: CommentAdapter
     lateinit var titledetaillPost : TextView
     lateinit var imagedetailPost : ImageView
     lateinit var descdetailPost : TextView
@@ -23,7 +35,9 @@ class PostDetails : AppCompatActivity() {
     lateinit var like_button : ImageView
     var cliked : Boolean = false
     lateinit var likes_count : TextView
-
+    lateinit var comment_input : TextInputEditText
+    lateinit var comment_post : Button
+    lateinit var comment_input_layout : TextInputLayout
     val apiInterface = ApiInterface.create()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,11 +50,47 @@ class PostDetails : AppCompatActivity() {
         datedetailPost = findViewById(R.id.datedetailPost)
         like_button = findViewById(R.id.like_button)
         likes_count = findViewById(R.id.likes_count)
+        recylcerComments = findViewById(R.id.commentsRecycleView)
 
+        comment_post = findViewById(R.id.post_comment_button)
+        comment_input = findViewById(R.id.comment_input)
+        comment_input_layout = findViewById(R.id.comment_input_layout)
+        val email = intent.getStringExtra("email").toString()
         val map: HashMap<String, String> = HashMap()
         map["title"] = title.toString()
+        println("moemen test lil map"+map)
+        apiInterface.getComments(map).enqueue(object: Callback<ArrayList<data>>{
+            override fun onResponse(
+                call: Call<ArrayList<data>>,
+                response: Response<ArrayList<data>>
+            ) {
+                val comments = response.body()
+                if(comments!=null){
+                    println("first test\n"+comments)
+                    val list = mutableListOf<Comment>()
+
+                    for(i in comments){
+                        list.add(Comment(i.key.toString(),i.value.toString()))
+
+                    }
+
+                    recylcerCommentsAdapter = CommentAdapter(list)
+                    recylcerComments.adapter = recylcerCommentsAdapter
+                   recylcerComments.layoutManager = LinearLayoutManager(this@PostDetails, LinearLayoutManager.VERTICAL ,false)
+
+                }
+            }
+
+            override fun onFailure(call: Call<ArrayList<data>>, t: Throwable) {
+                println("khlet commnttr")
+            }
+
+
+        })
+
+
         val bundle: Bundle? = intent.extras
-        val email = intent.getStringExtra("email").toString()
+
         println("ya moemen ija chouf lehne ken mawjouda wala la \n"+email)
 
         val maplike: HashMap<String, String> = HashMap()
@@ -126,6 +176,36 @@ class PostDetails : AppCompatActivity() {
             cliked = false}
 
         }
+        comment_post.setOnClickListener{
+            if(comment_input.text?.isEmpty() == true){
+                comment_input_layout.error = "comment cannot be empty"
+            }else {
+                val mapCommentAdd: HashMap<String, String> = HashMap()
+                mapCommentAdd["content"] = comment_input.text.toString()
+                mapCommentAdd["email"] = email.toString()
+                mapCommentAdd["title"] = title.toString()
+                println(mapCommentAdd)
+                apiInterface.addComment(mapCommentAdd).enqueue(object: Callback<ArrayList<data>> {
+                        override fun onResponse(
+                            call: Call<ArrayList<data>>,
+                            response: Response<ArrayList<data>>
+                        ) {val comments = response.body()
+                            val list = mutableListOf<Comment>()
+                            recylcerCommentsAdapter.updateData()
+                            recylcerCommentsAdapter = CommentAdapter(list)
+                            recylcerComments.adapter = recylcerCommentsAdapter
+                            recylcerComments.layoutManager = LinearLayoutManager(this@PostDetails, LinearLayoutManager.VERTICAL ,false)
+
+                        }
+
+                        override fun onFailure(call: Call<ArrayList<data>>, t: Throwable) {
+                            TODO("Not yet implemented")
+                        }
+
+                    })
+            }
+        }
+
 
 
     }

@@ -8,4 +8,5 @@ data class EventItem(
     var image: String = "",
     var url: String = "",
     var likes: String = "",
-)
+//    var comments: ArrayList<HashMap<String,String>>
+    )
