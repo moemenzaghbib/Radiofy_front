@@ -13,7 +13,6 @@ import com.example.myapplication.activities.MainScreenActivity
 import com.example.myapplication.activities.PostDetails
 import com.example.myapplication.databinding.EventItemBinding
 import com.example.myapplication.fragments.EventDetailFragment
-import com.example.myapplication.fragments.HomeDirections
 import com.example.myapplication.models.EventItem
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.view.*
