@@ -17,7 +17,7 @@ import com.junga.socketio_android.ChatRoomAdapter
 import io.socket.client.IO
 import io.socket.client.Socket
 import io.socket.emitter.Emitter
-import kotlinx.android.synthetic.main.activity_chat_room.*
+//import kotlinx.android.synthetic.main.activity_chat_room.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -80,8 +80,8 @@ class ChatRoomActivity : AppCompatActivity(), View.OnClickListener {
 
         })
 
-        send.setOnClickListener(this)
-        leave.setOnClickListener(this)
+//        send.setOnClickListener(this)
+//        leave.setOnClickListener(this)
 
 //        Get the nickname and roomname from entrance activity.
 //        try {
@@ -96,11 +96,11 @@ class ChatRoomActivity : AppCompatActivity(), View.OnClickListener {
 
         //Set Chatroom adapter
 
-        chatRoomAdapter = ChatRoomAdapter(this, chatList);
-        recyclerView.adapter = chatRoomAdapter;
-
-        val layoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = layoutManager
+//        chatRoomAdapter = ChatRoomAdapter(this, chatList);
+//        recyclerView.adapter = chatRoomAdapter;
+//
+//        val layoutManager = LinearLayoutManager(this)
+//        recyclerView.layoutManager = layoutManager
 
         //Let's connect to our Chat room! :D
         try {
@@ -153,32 +153,32 @@ class ChatRoomActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-    private fun sendMessage() {
-        val content = editText.text.toString()
-        val sendData = SendMessage(userName, content, roomName)
-        val jsonData = gson.toJson(sendData)
-        mSocket.emit("newMessage", jsonData)
-
-        val message = Message(userName, content, roomName, MessageType.CHAT_MINE.index)
-        addItemToRecyclerView(message)
-    }
+//    private fun sendMessage() {
+//      //  val content = editText.text.toString()
+//        val sendData = SendMessage(userName, content, roomName)
+//        val jsonData = gson.toJson(sendData)
+//        mSocket.emit("newMessage", jsonData)
+//
+//        val message = Message(userName, content, roomName, MessageType.CHAT_MINE.index)
+//        addItemToRecyclerView(message)
+//    }
 
     private fun addItemToRecyclerView(message: Message) {
 
         //Since this function is inside of the listener,
         // You need to do it on UIThread!
-        runOnUiThread {
-            chatList.add(message)
-            chatRoomAdapter.notifyItemInserted(chatList.size)
-            editText.setText("")
-            recyclerView.scrollToPosition(chatList.size - 1) //move focus on last message
-        }
+//        runOnUiThread {
+//            chatList.add(message)
+//            chatRoomAdapter.notifyItemInserted(chatList.size)
+//            editText.setText("")
+//            recyclerView.scrollToPosition(chatList.size - 1) //move focus on last message
+//        }
     }
 
 
     override fun onClick(p0: View?) {
         when (p0!!.id) {
-            R.id.send -> sendMessage()
+//            R.id.send -> sendMessage()
             R.id.leave -> onDestroy()
         }
     }
