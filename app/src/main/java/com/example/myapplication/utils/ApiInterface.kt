@@ -72,7 +72,7 @@ interface ApiInterface {
     fun getComments(@Body map: HashMap<String, String>):Call<ArrayList<data>>
 
     @POST("post/addComment")
-    fun addComment(@Body map: HashMap<String, String>):Call<ArrayList<data>>
+    fun addComment(@Body map: HashMap<String, String>):Call<data>
 
     @POST("chatRoom/GetAllConnectedUsers")
     fun GetAllConnectedUsers(@Body map: HashMap<String, String>):Call<ArrayList<data>>

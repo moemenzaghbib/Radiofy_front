@@ -173,16 +173,16 @@
             android:exported="true">
 
             <!-- react to main intents -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
 
-            <!-- react to voice searches, like "Play Security Now" -->
-            <intent-filter>
-                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+<!--            &lt;!&ndash; react to voice searches, like "Play Security Now" &ndash;&gt;-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--            </intent-filter>-->
 
             <!-- react to playlist-links based on file extension -->
             <intent-filter>
