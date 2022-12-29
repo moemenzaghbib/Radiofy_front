@@ -68,43 +68,6 @@
         app:layout_constraintTop_toBottomOf="@+id/app_icon" />
 
 
-    <!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:id="@+id/import_running_text"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/onboarding_app_import_running"-->
-<!--        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"-->
-<!--        android:textColor="@color/text_lightweight"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/progress_indicator"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/progress_indicator"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/progress_indicator" />-->
-
-<!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:id="@+id/rodriguez_quote_1"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="48dp"-->
-<!--        android:text="@string/onboarding_app_rodriguez_quote_1"-->
-<!--        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"-->
-<!--        android:textColor="@color/text_lightweight"-->
-<!--        android:textStyle="italic"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/app_description"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/app_description"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/app_description" />-->
-
-<!--    <com.google.android.material.textview.MaterialTextView-->
-<!--        android:id="@+id/rodriguez_quote_2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/onboarding_app_rodriguez_quote_2"-->
-<!--        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"-->
-<!--        android:textColor="@color/text_lightweight"-->
-<!--        android:textStyle="italic"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/rodriguez_quote_1"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/rodriguez_quote_1"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/rodriguez_quote_1" />-->
-
-    <!-- Constraintlayout View Groups -->
 
     <ProgressBar
         android:id="@+id/progress_indicator"
