@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * AudioHelper.kt
  * Implements the AudioHelper object
@@ -11,13 +12,18 @@
  * http://opensource.org/licenses/MIT
  */
 
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 package com.example.myapplication.helpers
 
 import android.content.Context
 import android.media.MediaMetadataRetriever
 import android.net.Uri
+<<<<<<< HEAD
 import com.example.myapplication.helpers.LogHelper
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 /*

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * UpdateHelper.kt
  * Implements the UpdateHelper class
@@ -10,21 +11,32 @@
  * Licensed under the MIT-License
  * http://opensource.org/licenses/MIT
  */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
 
 import android.content.Context
+<<<<<<< HEAD
 import com.example.myapplication.activities.MusicActivity.Companion.search
 import com.example.myapplication.core.Station
 import com.example.myapplication.search.RadioBrowserSearch
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import com.example.myapplication.Keys
 import com.example.myapplication.core.Collection
+<<<<<<< HEAD
 import com.example.myapplication.search.RadioBrowserResult
 
+=======
+import com.example.myapplication.core.Station
+import com.example.myapplication.search.RadioBrowserResult
+import com.example.myapplication.search.RadioBrowserSearch
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 /*

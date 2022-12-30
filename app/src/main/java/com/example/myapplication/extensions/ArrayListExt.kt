@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * ArrayListExt.kt
  * Implements the ArrayListExt extension methods
@@ -11,6 +12,8 @@
  * Licensed under the MIT-License
  * http://opensource.org/licenses/MIT
  */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.extensions

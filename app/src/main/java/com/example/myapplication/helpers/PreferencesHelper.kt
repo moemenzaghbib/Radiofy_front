@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * PreferencesHelper.kt
  * Implements the PreferencesHelper object
@@ -10,6 +11,8 @@
  * Licensed under the MIT-License
  * http://opensource.org/licenses/MIT
  */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
@@ -19,10 +22,17 @@ import android.content.SharedPreferences
 import android.support.v4.media.session.PlaybackStateCompat
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
+<<<<<<< HEAD
 import com.example.myapplication.Keys
 import com.example.myapplication.ui.PlayerState
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.gson.Gson
+=======
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.gson.Gson
+import com.example.myapplication.Keys
+import com.example.myapplication.ui.PlayerState
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import java.util.*
 
 
@@ -281,4 +291,8 @@ object PreferencesHelper {
         return sharedPreferences.getBoolean(Keys.PREF_DOWNLOAD_OVER_MOBILE, Keys.DEFAULT_DOWNLOAD_OVER_MOBILE)
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889

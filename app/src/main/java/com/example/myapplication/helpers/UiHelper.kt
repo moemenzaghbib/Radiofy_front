@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * UiHelper.kt
  * Implements the UiHelper object
@@ -11,6 +12,8 @@
  * http://opensource.org/licenses/MIT
  */
 
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 package com.example.myapplication.helpers
 
@@ -26,10 +29,16 @@ import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+<<<<<<< HEAD
 import com.example.myapplication.Keys
 import com.example.myapplication.R
 import com.google.android.material.snackbar.Snackbar
 
+=======
+import com.google.android.material.snackbar.Snackbar
+import com.example.myapplication.Keys
+import com.example.myapplication.R
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 /*
@@ -176,10 +185,14 @@ object UiHelper {
      */
 
 
+<<<<<<< HEAD
     /*
      * Inner class: Callback that detects a swipe to left
      * Credit: https://github.com/kitek/android-rv-swipe-delete/blob/master/app/src/main/java/pl/kitek/rvswipetodelete/SwipeToDeleteCallback.kt
      */
+=======
+
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     abstract class SwipeToMarkStarredCallback(context: Context): ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
 
         private val starIcon = ContextCompat.getDrawable(context, R.drawable.ic_marked_starred_star_24dp)

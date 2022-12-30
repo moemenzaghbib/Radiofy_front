@@ -27,6 +27,11 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+<<<<<<< HEAD
+=======
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.textview.MaterialTextView
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import com.example.myapplication.Keys
 import com.example.myapplication.R
 import com.example.myapplication.core.Station
@@ -34,8 +39,11 @@ import com.example.myapplication.helpers.LogHelper
 import com.example.myapplication.search.RadioBrowserResult
 import com.example.myapplication.search.RadioBrowserResultAdapter
 import com.example.myapplication.search.RadioBrowserSearch
+<<<<<<< HEAD
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textview.MaterialTextView
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 

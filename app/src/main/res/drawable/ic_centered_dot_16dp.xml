@@ -4,6 +4,10 @@
     android:viewportWidth="24"
     android:viewportHeight="24">
   <path
+<<<<<<< HEAD
       android:fillColor="@color/black"
+=======
+      android:fillColor="@color/text_link_separator"
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
       android:pathData="m9,12c0,1.66 1.34,3 3,3 1.66,0 3,-1.34 3,-3 0,-1.66 -1.34,-3 -3,-3 -1.66,0 -3,1.34 -3,3z"/>
 </vector>

@@ -3,7 +3,11 @@
     android:shape="oval">
     <stroke
         android:width="2dp"
+<<<<<<< HEAD
         android:color="@color/white" />
+=======
+        android:color="@color/default_neutral_lighter" />
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     <size
         android:width="56dp"
         android:height="56dp" />

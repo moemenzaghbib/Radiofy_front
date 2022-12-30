@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * PlayerController.kt
  * Implements the PlayerController class
@@ -10,6 +11,8 @@
  * Licensed under the MIT-License
  * http://opensource.org/licenses/MIT
  */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.playback
@@ -22,7 +25,10 @@ import com.example.myapplication.Keys
 import com.example.myapplication.helpers.LogHelper
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 /*
  * PlayerController class
  */

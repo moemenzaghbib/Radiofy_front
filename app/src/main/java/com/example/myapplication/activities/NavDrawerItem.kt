@@ -10,6 +10,3 @@ import com.example.myapplication.R
 //    object Profile : NavDrawerItem("profile", R.drawable.ic_profile, "Profile")
 //    object Settings : NavDrawerItem("settings", R.drawable.ic_settings, "Settings")
 //}
-
-// nikomek kifeh hchitou lzebi fi joret hal class la9heb ya3tek 3asba
-//  https://www.youtube.com/watch?v=Kaq2rY435FQ&ab_channel=Sanfara

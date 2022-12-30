@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * RadioBrowserResult.kt
  * Implements the RadioBrowserResult class
@@ -11,13 +12,21 @@
  * http://opensource.org/licenses/MIT
  */
 
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 package com.example.myapplication.search
 
 import android.support.v4.media.session.PlaybackStateCompat
+<<<<<<< HEAD
 import com.example.myapplication.Keys
 import com.example.myapplication.core.Station
 import com.google.gson.annotations.Expose
+=======
+import com.google.gson.annotations.Expose
+import com.example.myapplication.Keys
+import com.example.myapplication.core.Station
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import java.util.*
 
 
@@ -54,6 +63,7 @@ data class RadioBrowserResult (@Expose val changeuuid: String,
 
 }
 
+<<<<<<< HEAD
 
 /*
 JSON Struct Station
@@ -84,3 +94,5 @@ clicktimestamp 	    datetime, YYYY-MM-DD HH:mm:ss 	    The time of the last clic
 clickcount 	        number, integer 	                Clicks within the last 24 hours
 clicktrend 	        number, integer 	                The difference of the clickcounts within the last 2 days. Posivite values mean an increase, negative a decrease of clicks.
  */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889

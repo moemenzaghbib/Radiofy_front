@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
 
         <attr format="enum" name="animateCircleAngleTo">
             <enum name="bestChoice" value="0"/>
@@ -1563,3 +1564,9 @@
         </declare-styleable>
 
 </resources>
+=======
+    <drawable name="exo_notification_play">@drawable/ic_notification_play_36dp</drawable>
+    <drawable name="exo_notification_pause">@drawable/ic_notification_stop_36dp</drawable>
+    <drawable name="exo_notification_stop">@drawable/ic_notification_clear_36dp</drawable>
+</resources>
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889

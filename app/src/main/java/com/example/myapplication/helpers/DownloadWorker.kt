@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * DownloadWorker.kt
  * Implements the DownloadWorker class
@@ -10,6 +11,8 @@
  * Licensed under the MIT-License
  * http://opensource.org/licenses/MIT
  */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
@@ -18,8 +21,11 @@ import android.content.Context
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.example.myapplication.Keys
+<<<<<<< HEAD
 import com.example.myapplication.helpers.LogHelper
 import com.example.myapplication.helpers.PreferencesHelper
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 /*
@@ -42,7 +48,10 @@ class DownloadWorker(context : Context, params : WorkerParameters): Worker(conte
             }
         }
         return Result.success()
+<<<<<<< HEAD
         // (Returning Result.retry() tells WorkManager to try this task again later; Result.failure() says not to try again.)
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     }
 
 

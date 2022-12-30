@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * LogHelper.kt
  * Implements the LogHelper object
@@ -10,6 +11,8 @@
  * Licensed under the MIT-License
  * http://opensource.org/licenses/MIT
  */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
@@ -17,7 +20,10 @@ package com.example.myapplication.helpers
 import android.content.Context
 import android.util.Log
 import com.example.myapplication.BuildConfig
+<<<<<<< HEAD
 import com.example.myapplication.helpers.PreferencesHelper
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import java.util.*
 
 
@@ -27,7 +33,11 @@ import java.util.*
 object LogHelper {
 
     private const val TESTING: Boolean = false // set to "false" for release builds
+<<<<<<< HEAD
     private const val LOG_PREFIX: String = "transistor_"
+=======
+    private const val LOG_PREFIX: String = "Radiofy_"
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     private const val MAX_LOG_TAG_LENGTH: Int = 64
     private const val LOG_PREFIX_LENGTH: Int = LOG_PREFIX.length
 
@@ -103,7 +113,10 @@ object LogHelper {
     private fun log(tag: String, level: Int, t: Throwable?, vararg messages: Any) {
         val message: String
         if (t == null && messages.size == 1) {
+<<<<<<< HEAD
             // handle this common case without the extra cost of creating a stringbuffer:
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
             message = messages[0].toString()
         } else {
             val sb = StringBuilder()
@@ -117,6 +130,7 @@ object LogHelper {
         }
         Log.println(level, tag, message)
 
+<<<<<<< HEAD
 //        if (Log.isLoggable(tag, level)) {
 //            val message: String
 //            if (t == null && messages != null && messages.size == 1) {
@@ -135,5 +149,7 @@ object LogHelper {
 //            }
 //            Log.println(level, tag, message)
 //        }
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     }
 }

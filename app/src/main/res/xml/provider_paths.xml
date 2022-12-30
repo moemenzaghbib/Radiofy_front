@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
+<<<<<<< HEAD
     <external-files-path name="my_images" path="Android/data/org.y20k.transistor/files/Pictures" />
+=======
+    <external-files-path name="my_images" path="Android/data/com.example.myapplication/files/Pictures" />
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     <external-path name="external_files" path="."/>
 </paths>

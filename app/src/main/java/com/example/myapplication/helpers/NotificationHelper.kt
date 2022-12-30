@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * NotificationHelper.kt
  * Implements the NotificationHelper class
@@ -10,6 +11,8 @@
  * Licensed under the MIT-License
  * http://opensource.org/licenses/MIT
  */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
@@ -20,7 +23,10 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.support.v4.media.session.MediaControllerCompat
 import android.support.v4.media.session.MediaSessionCompat
+<<<<<<< HEAD
 import com.example.myapplication.R
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.PlayerNotificationManager
 import kotlinx.coroutines.CoroutineScope
@@ -30,6 +36,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.example.myapplication.Keys
+<<<<<<< HEAD
 
 
 
@@ -37,6 +44,12 @@ import com.example.myapplication.Keys
  * NotificationHelper class
  * Credit: https://github.com/android/uamp/blob/5bae9316b60ba298b6080de1fcad53f6f74eb0bf/common/src/main/java/com/example/android/uamp/media/UampNotificationManager.kt
  */
+=======
+import com.example.myapplication.R
+
+
+
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 class NotificationHelper(private val context: Context, sessionToken: MediaSessionCompat.Token, notificationListener: PlayerNotificationManager.NotificationListener) {
 
     /* Define log tag */
@@ -95,6 +108,7 @@ class NotificationHelper(private val context: Context, sessionToken: MediaSessio
     }
 
 
+<<<<<<< HEAD
 //    /*
 //     * Inner class: Intercept stop button tap
 //     */
@@ -128,6 +142,8 @@ class NotificationHelper(private val context: Context, sessionToken: MediaSessio
 //     * End of inner class
 //     */
 
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
     /*
      * Inner class: Create content of notification from metaddata

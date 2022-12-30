@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * PlayerServiceStarterActivity.kt
  * Implements the PlayerServiceStarterActivity class
@@ -10,6 +11,8 @@
  * Licensed under the MIT-License
  * http://opensource.org/licenses/MIT
  */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication
@@ -20,7 +23,10 @@ import android.os.Bundle
 import com.example.myapplication.playback.PlayerService
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 /*
  * PlayerServiceStarterActivity class
  */
