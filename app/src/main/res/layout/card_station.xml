@@ -6,9 +6,10 @@
     android:id="@+id/station_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
+<<<<<<< HEAD
     app:shapeAppearanceOverlay="@drawable/round"
-
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     android:layout_marginStart="8dp"
     android:layout_marginTop="16dp"
     android:layout_marginEnd="8dp"
@@ -34,12 +35,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/RoundedCorners"
-
-        app:srcCompat="@drawable/radio_fm_icon" />
-
         app:srcCompat="@drawable/ic_default_station_image_72dp" />
 
-
+<<<<<<< HEAD
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/change_image_view"
         android:layout_width="0dp"
@@ -54,8 +52,37 @@
         app:layout_constraintTop_toTopOf="@+id/station_icon"
         app:shapeAppearanceOverlay="@style/RoundedCorners"
         app:srcCompat="@drawable/ic_image_white_36dp" />
+=======
+<!--    <com.google.android.material.imageview.ShapeableImageView-->
+<!--        android:id="@+id/change_image_view"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@color/default_neutral_85percent"-->
+<!--        android:contentDescription="@string/descr_card_station_image_change"-->
+<!--        android:cropToPadding="false"-->
+<!--        app:contentPadding="18dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/station_icon"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/station_icon"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/station_icon"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/station_icon"-->
+<!--        app:shapeAppearanceOverlay="@style/RoundedCorners"-->
+<!--        app:srcCompat="@drawable/ic_default_station_image_72dp" />-->
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
-
+<!--    <com.google.android.material.imageview.ShapeableImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:cropToPadding="false"-->
+<!--        app:contentPadding="8dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/cancel_button"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/station_icon"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/station_icon"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/station_icon"-->
+<!--        app:shapeAppearanceOverlay="@style/RoundedCorners"-->
+<!--        app:srcCompat="@drawable/ic_add_to_home_screen_24dp"-->
+<!--        app:strokeColor="@color/text_default"-->
+<!--        app:strokeWidth="1dp" />-->
 
     <ImageView
         android:id="@+id/starred_icon"
@@ -71,9 +98,10 @@
         tools:visibility="visible" />
 
     <com.google.android.material.textview.MaterialTextView
-
+<<<<<<< HEAD
+=======
         android:textColor="@color/black"
-
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         android:id="@+id/station_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -109,7 +137,7 @@
         app:layout_constraintTop_toTopOf="@+id/station_name"
         app:srcCompat="@drawable/ic_play_circle_outline_36dp" />
 
-
+<<<<<<< HEAD
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edit_station_name"
         android:layout_width="0dp"
@@ -168,17 +196,77 @@
         app:layout_constraintBottom_toBottomOf="@+id/save_button"
         app:layout_constraintEnd_toStartOf="@+id/save_button"
         app:layout_constraintTop_toTopOf="@+id/save_button" />
+=======
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/edit_station_name"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="12dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:hint="@string/dialog_edit_station_name"-->
+<!--        android:singleLine="true"-->
+<!--        android:textAppearance="@style/TextAppearance.Material3.LabelLarge"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/station_name"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/playback_button"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/starred_icon"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/station_name" />-->
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/edit_stream_uri"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="@string/dialog_edit_stream_uri"-->
+<!--        android:singleLine="true"-->
+<!--        android:textAppearance="@style/TextAppearance.Material3.LabelLarge"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/station_name"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/station_name"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/station_name" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/place_on_home_screen_button"-->
+<!--        style="?attr/materialButtonOutlinedStyle"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/descr_dialog_edit_place_on_home_screen_icon"-->
+<!--        app:icon="@drawable/ic_add_to_home_screen_24dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/edit_station_name"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/edit_station_name"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/edit_stream_uri" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/save_button"-->
+<!--        style="@style/Widget.Material3.Button.TextButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:text="@string/dialog_edit_save_changes"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/place_on_home_screen_button" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/cancel_button"-->
+<!--        style="@style/Widget.Material3.Button.TextButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/dialog_yes_no_negative_button_cancel"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/save_button"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/save_button"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/save_button" />-->
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/default_edit_views"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
-
+<<<<<<< HEAD
         app:constraint_referenced_ids="change_image_view,edit_station_name,place_on_home_screen_button,save_button,cancel_button" />
-
+=======
         />
-
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
