@@ -18,7 +18,11 @@ import android.os.Parcelable
 import android.support.v4.media.session.PlaybackStateCompat
 import androidx.annotation.Keep
 import com.google.gson.annotations.Expose
+<<<<<<< HEAD
+import kotlinx.android.parcel.Parcelize
+=======
 import kotlinx.parcelize.Parcelize
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import com.example.myapplication.Keys
 import java.util.*
 

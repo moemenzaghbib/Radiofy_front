@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+/*
+ * WorkerHelper.kt
+ * Implements the WorkerHelper object
+ * A WorkerHelper provides helper methods for starting work jobs
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers

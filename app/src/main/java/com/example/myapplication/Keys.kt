@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+/*
+ * Keys.kt
+ * Implements the keys used throughout the app
+ * This object hosts all keys used to control Transistor state
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 package com.example.myapplication
 
@@ -29,11 +45,19 @@ object Keys {
     const val NOW_PLAYING_NOTIFICATION_CHANNEL_ID: String = "notificationChannelIdPlaybackChannel"
 
     // intent actions
+<<<<<<< HEAD
+    const val ACTION_SHOW_PLAYER: String = "org.y20k.transistor.action.SHOW_PLAYER"
+    const val ACTION_START_PLAYER_SERVICE: String = "org.y20k.transistor.action.START_PLAYER_SERVICE"
+    const val ACTION_COLLECTION_CHANGED: String = "org.y20k.transistor.action.COLLECTION_CHANGED"
+    const val ACTION_START: String = "org.y20k.transistor.action.START"
+    const val ACTION_STOP: String = "org.y20k.transistor.action.STOP"
+=======
     const val ACTION_SHOW_PLAYER: String = "com.example.myapplication.action.SHOW_PLAYER"
     const val ACTION_START_PLAYER_SERVICE: String = "com.example.myapplication.action.START_PLAYER_SERVICE"
     const val ACTION_COLLECTION_CHANGED: String = "com.example.myapplication.action.COLLECTION_CHANGED"
     const val ACTION_START: String = "com.example.myapplication.action.START"
     const val ACTION_STOP: String = "com.example.myapplication.action.STOP"
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
     // intent extras
     const val EXTRA_COLLECTION_MODIFICATION_DATE: String = "COLLECTION_MODIFICATION_DATE"
@@ -170,7 +194,11 @@ object Keys {
     const val RADIO_BROWSER_API_DEFAULT: String = "de1.api.radio-browser.info"
 
     // locations
+<<<<<<< HEAD
+    const val LOCATION_DEFAULT_STATION_IMAGE: String = "android.resource://org.y20k.transistor/drawable/ic_default_station_image_24dp"
+=======
     const val LOCATION_DEFAULT_STATION_IMAGE: String = "android.resource://com.example.myapplication/drawable/ic_default_station_image_24dp"
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
     // sizes (in dp)
     const val SIZE_COVER_NOTIFICATION_LARGE_ICON: Int = 256

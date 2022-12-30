@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+/*
+ * LayoutHolder.kt
+ * Implements the LayoutHolder class
+ * A LayoutHolder hold references to the main views
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.ui
@@ -17,11 +32,19 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+<<<<<<< HEAD
+=======
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import com.example.myapplication.Keys
 import com.example.myapplication.R
 import com.example.myapplication.core.Station
 import com.example.myapplication.helpers.*
+<<<<<<< HEAD
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 /*
@@ -37,7 +60,11 @@ data class LayoutHolder(var rootView: View) {
     var recyclerView: RecyclerView
     val layoutManager: LinearLayoutManager
     var bottomSheet: ConstraintLayout
+<<<<<<< HEAD
+    //private var sheetMetadataViews: Group
+=======
 
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     var sleepTimerRunningViews: Group
     private var downloadProgressIndicator: ProgressBar
     private var stationImageView: ImageView
@@ -45,12 +72,26 @@ data class LayoutHolder(var rootView: View) {
     private var metadataView: TextView
     var playButtonView: ImageButton
     var bufferingIndicator: ProgressBar
+<<<<<<< HEAD
+//    private var sheetStreamingLinkHeadline: TextView
+//    private var sheetStreamingLinkView: TextView
+//    private var sheetMetadataHistoryHeadline: TextView
+//    private var sheetMetadataHistoryView: TextView
+//    var sheetNextMetadataView: ImageView
+//    var sheetPreviousMetadataView: ImageView
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     var sheetSleepTimerStartButtonView: ImageView
     var sheetSleepTimerCancelButtonView: ImageView
     private var sheetSleepTimerRemainingTimeView: TextView
     private var onboardingLayout: ConstraintLayout
+<<<<<<< HEAD
+    //private var onboardingQuoteViews: Group
+    //private var onboardingImportViews: Group
+=======
     private var onboardingQuoteViews: Group
     private var onboardingImportViews: Group
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     private var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private var metadataHistory: MutableList<String>
     private var metadataHistoryPosition: Int
@@ -61,6 +102,10 @@ data class LayoutHolder(var rootView: View) {
         // find views
         recyclerView = rootView.findViewById(R.id.station_list)
         bottomSheet = rootView.findViewById(R.id.bottom_sheet)
+<<<<<<< HEAD
+        //sheetMetadataViews = rootView.findViewById(R.id.sheet_metadata_views)
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         sleepTimerRunningViews = rootView.findViewById(R.id.sleep_timer_running_views)
         downloadProgressIndicator = rootView.findViewById(R.id.download_progress_indicator)
         stationImageView = rootView.findViewById(R.id.station_icon)
@@ -68,12 +113,27 @@ data class LayoutHolder(var rootView: View) {
         metadataView = rootView.findViewById(R.id.player_station_metadata)
         playButtonView = rootView.findViewById(R.id.player_play_button)
         bufferingIndicator = rootView.findViewById(R.id.player_buffering_indicator)
+<<<<<<< HEAD
+//        sheetStreamingLinkView = rootView.findViewById(R.id.sheet_streaming_link)
+//        sheetStreamingLinkHeadline = rootView.findViewById(R.id.sheet_streaming_link_headline)
+//        sheetMetadataHistoryHeadline = rootView.findViewById(R.id.sheet_metadata_headline)
+//        sheetMetadataHistoryView = rootView.findViewById(R.id.sheet_metadata_history)
+//        sheetNextMetadataView = rootView.findViewById(R.id.sheet_next_metadata_button)
+//        sheetPreviousMetadataView = rootView.findViewById(R.id.sheet_previous_metadata_button)
+        sheetSleepTimerStartButtonView = rootView.findViewById(R.id.sleep_timer_start_button)
+        sheetSleepTimerCancelButtonView = rootView.findViewById(R.id.sleep_timer_cancel_button)
+        sheetSleepTimerRemainingTimeView = rootView.findViewById(R.id.sleep_timer_remaining_time)
+        onboardingLayout = rootView.findViewById(R.id.onboarding_layout)
+       // onboardingQuoteViews = rootView.findViewById(R.id.onboarding_quote_views)
+       // onboardingImportViews = rootView.findViewById(R.id.onboarding_import_views)
+=======
   sheetSleepTimerStartButtonView = rootView.findViewById(R.id.sleep_timer_start_button)
         sheetSleepTimerCancelButtonView = rootView.findViewById(R.id.sleep_timer_cancel_button)
         sheetSleepTimerRemainingTimeView = rootView.findViewById(R.id.sleep_timer_remaining_time)
         onboardingLayout = rootView.findViewById(R.id.onboarding_layout)
         onboardingQuoteViews = rootView.findViewById(R.id.onboarding_quote_views)
         onboardingImportViews = rootView.findViewById(R.id.onboarding_import_views)
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
         metadataHistory = PreferencesHelper.loadMetadataHistory()
         metadataHistoryPosition = metadataHistory.size - 1
@@ -83,6 +143,39 @@ data class LayoutHolder(var rootView: View) {
         recyclerView.layoutManager = layoutManager
         recyclerView.itemAnimator = DefaultItemAnimator()
 
+<<<<<<< HEAD
+        // set up metadata history next and previous buttons
+//        sheetPreviousMetadataView.setOnClickListener {
+//            if (metadataHistory.isNotEmpty()) {
+//                if (metadataHistoryPosition > 0) {
+//                    metadataHistoryPosition -= 1
+//                } else {
+//                    metadataHistoryPosition = metadataHistory.size - 1
+//                }
+//                sheetMetadataHistoryView.text = metadataHistory[metadataHistoryPosition]
+//            }
+//        }
+//        sheetNextMetadataView.setOnClickListener {
+//            if (metadataHistory.isNotEmpty()) {
+//                if (metadataHistoryPosition < metadataHistory.size - 1) {
+//                    metadataHistoryPosition += 1
+//                } else {
+//                    metadataHistoryPosition = 0
+//                }
+//                sheetMetadataHistoryView.text = metadataHistory[metadataHistoryPosition]
+//            }
+//        }
+//        sheetMetadataHistoryView.setOnLongClickListener {
+//            copyMetadataHistoryToClipboard()
+//            return@setOnLongClickListener true
+//        }
+//        sheetMetadataHistoryHeadline.setOnLongClickListener {
+//            copyMetadataHistoryToClipboard()
+//            return@setOnLongClickListener true
+//        }
+
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         // set layout for player
         setupBottomSheet()
     }
@@ -92,11 +185,19 @@ data class LayoutHolder(var rootView: View) {
     fun updatePlayerViews(context: Context, station: Station, playbackState: Int) {
 
         // set default metadata views, when playback has stopped
+<<<<<<< HEAD
+//        if (playbackState != PlaybackStateCompat.STATE_PLAYING) {
+//            metadataView.text = station.name
+//            sheetMetadataHistoryView.text = station.name
+//            sheetMetadataHistoryView.isSelected = true
+//        }
+=======
         if (playbackState != PlaybackStateCompat.STATE_PLAYING) {
             metadataView.text = station.name
 //            sheetMetadataHistoryView.text = station.name
 //            sheetMetadataHistoryView.isSelected = true
         }
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
         // toggle buffering indicator
         if (playbackState == PlaybackStateCompat.STATE_BUFFERING) {
@@ -115,6 +216,18 @@ data class LayoutHolder(var rootView: View) {
         stationImageView.setImageBitmap(ImageHelper.getStationImage(context, station.smallImage))
         stationImageView.contentDescription = "${context.getString(R.string.descr_player_station_image)}: ${station.name}"
 
+<<<<<<< HEAD
+        // update streaming link
+//        sheetStreamingLinkView.text = station.getStreamUri()
+
+        // update click listeners
+//        sheetStreamingLinkHeadline.setOnClickListener{ copyToClipboard(context, sheetStreamingLinkView.text) }
+//        sheetStreamingLinkView.setOnClickListener{ copyToClipboard(context, sheetStreamingLinkView.text) }
+//        sheetMetadataHistoryHeadline.setOnClickListener { copyToClipboard(context, sheetMetadataHistoryView.text) }
+//        sheetMetadataHistoryView.setOnClickListener { copyToClipboard(context, sheetMetadataHistoryView.text) }
+
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     }
 
 
@@ -180,6 +293,29 @@ data class LayoutHolder(var rootView: View) {
 
 
     /* Toggle the Import Running indicator  */
+<<<<<<< HEAD
+//    fun toggleImportingStationViews() {
+//        if (onboardingImportViews.visibility == View.INVISIBLE) {
+//            onboardingImportViews.isVisible = false
+//            //onboardingQuoteViews.isVisible = false
+//        } else {
+//            onboardingImportViews.isVisible = true
+//          //  onboardingQuoteViews.isVisible = true
+//        }
+//    }
+
+
+    /* Toggles visibility of player depending on playback state - hiding it when playback is stopped (not paused or playing) */
+//    fun togglePlayerVisibility(context: Context, playbackState: Int): Boolean {
+//        when (playbackState) {
+//            PlaybackStateCompat.STATE_STOPPED -> return hidePlayer(context)
+//            PlaybackStateCompat.STATE_NONE -> return hidePlayer(context)
+//            PlaybackStateCompat.STATE_ERROR -> return hidePlayer(context)
+//            else -> return showPlayer(context)
+//        }
+//    }
+
+=======
     fun toggleImportingStationViews() {
         if (onboardingImportViews.visibility == View.INVISIBLE) {
             onboardingImportViews.isVisible = true
@@ -191,6 +327,7 @@ data class LayoutHolder(var rootView: View) {
     }
 
 
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
     /* Toggles visibility of the download progress indicator */
     fun toggleDownloadProgressIndicator() {

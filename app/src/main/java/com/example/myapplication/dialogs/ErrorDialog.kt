@@ -22,11 +22,16 @@ import android.widget.TextView
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import com.example.myapplication.R
+<<<<<<< HEAD
+import com.example.myapplication.helpers.LogHelper
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+=======
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.example.myapplication.helpers.LogHelper
 
 
 
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 

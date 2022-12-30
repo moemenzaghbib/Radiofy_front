@@ -17,9 +17,17 @@ package com.example.myapplication.collection
 
 import android.content.Context
 import android.support.v4.media.MediaBrowserCompat
+<<<<<<< HEAD
+import com.example.myapplication.core.Station
+import com.example.myapplication.helpers.CollectionHelper
+import com.example.myapplication.core.Collection
+
+
+=======
 import com.example.myapplication.core.Collection
 import com.example.myapplication.core.Station
 import com.example.myapplication.helpers.CollectionHelper
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 /**

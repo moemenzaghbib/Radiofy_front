@@ -6,7 +6,11 @@
         <shape
             android:shape="rectangle">
 
+<<<<<<< HEAD
+            <solid android:color="#fff" />
+=======
             <solid android:color="@color/player_sheet_background" />
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
             <corners android:topLeftRadius="32dp" />
 <!--            <stroke android:width="1dp" android:color="@color/player_sheet_background_border"/>-->
 

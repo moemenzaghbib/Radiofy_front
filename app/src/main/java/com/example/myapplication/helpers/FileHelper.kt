@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+/*
+ * FileHelper.kt
+ * Implements the FileHelper object
+ * A FileHelper provides helper methods for reading and writing files from and to device storage
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
@@ -21,6 +36,10 @@ import kotlinx.coroutines.withContext
 import com.example.myapplication.Keys
 import com.example.myapplication.core.Collection
 import com.example.myapplication.core.Station
+<<<<<<< HEAD
+import com.example.myapplication.helpers.LogHelper
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import java.io.*
 import java.net.URL
 import java.text.NumberFormat
@@ -35,7 +54,10 @@ import kotlin.math.pow
  * FileHelper object
  */
 object FileHelper {
+<<<<<<< HEAD
+=======
 
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     /* Define log tag */
     private val TAG: String = LogHelper.makeLogTag(FileHelper::class.java)
 
@@ -171,7 +193,11 @@ object FileHelper {
 
 
     /* Saves collection of radio stations as JSON text file */
+<<<<<<< HEAD
+    fun saveCollection(context: Context, collection: com.example.myapplication.core.Collection, lastSave: Date) {
+=======
     fun saveCollection(context: Context, collection: Collection, lastSave: Date) {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         LogHelper.v(TAG, "Saving collection - Thread: ${Thread.currentThread().name}")
         val collectionSize: Int = collection.stations.size
         // do not override an existing collection with an empty one - except when last station is deleted
@@ -237,11 +263,19 @@ object FileHelper {
 
 
     /* Reads collection of radio stations from storage using GSON */
+<<<<<<< HEAD
+    fun readCollection(context: Context): com.example.myapplication.core.Collection {
+        LogHelper.v(TAG, "Reading collection - Thread: ${Thread.currentThread().name}")
+        // get JSON from text file
+        val json: String = readTextFile(context, Keys.FOLDER_COLLECTION, Keys.COLLECTION_FILE)
+        var collection: com.example.myapplication.core.Collection = com.example.myapplication.core.Collection()
+=======
     fun readCollection(context: Context): Collection {
         LogHelper.v(TAG, "Reading collection - Thread: ${Thread.currentThread().name}")
         // get JSON from text file
         val json: String = readTextFile(context, Keys.FOLDER_COLLECTION, Keys.COLLECTION_FILE)
         var collection: Collection = Collection()
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         when (json.isNotBlank()) {
             // convert JSON and return as collection
             true -> try {
@@ -250,6 +284,10 @@ object FileHelper {
                 LogHelper.e(TAG, "Error Reading collection.\nContent: $json")
                 e.printStackTrace()
             }
+<<<<<<< HEAD
+            else -> println ("")
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         }
         return collection
     }
@@ -293,7 +331,11 @@ object FileHelper {
 
 
     /* Suspend function: Wrapper for saveCollection */
+<<<<<<< HEAD
+    suspend fun saveCollectionSuspended(context: Context, collection: com.example.myapplication.core.Collection, lastUpdate: Date) {
+=======
     suspend fun saveCollectionSuspended(context: Context, collection: Collection, lastUpdate: Date) {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         return suspendCoroutine { cont ->
             cont.resume(saveCollection(context, collection, lastUpdate))
         }
@@ -301,7 +343,11 @@ object FileHelper {
 
 
     /* Suspend function: Wrapper for readCollection */
+<<<<<<< HEAD
+    suspend fun readCollectionSuspended(context: Context): com.example.myapplication.core.Collection =
+=======
     suspend fun readCollectionSuspended(context: Context): Collection =
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         withContext(Dispatchers.IO) {
             readCollection(context)
         }
@@ -316,7 +362,11 @@ object FileHelper {
 
 
     /* Suspend function: Exports collection of stations as M3U file - local backup copy */
+<<<<<<< HEAD
+    suspend fun backupCollectionAsM3uSuspended(context: Context, collection: com.example.myapplication.core.Collection) {
+=======
     suspend fun backupCollectionAsM3uSuspended(context: Context, collection: Collection) {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         return suspendCoroutine { cont ->
             LogHelper.v(TAG, "Backing up collection as M3U - Thread: ${Thread.currentThread().name}")
             // create M3U string
@@ -389,6 +439,10 @@ object FileHelper {
 
 
     /* Converts byte value into a human readable format */
+<<<<<<< HEAD
+    // Source: https://programming.guide/java/formatting-byte-size-to-human-readable-format.html
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     fun getReadableByteCount(bytes: Long, si: Boolean = true): String {
 
         // check if Decimal prefix symbol (SI) or Binary prefix symbol (IEC) requested
@@ -415,6 +469,10 @@ object FileHelper {
     /* Reads InputStream from file uri and returns it as String */
     private fun readTextFile(context: Context, folder: String, fileName: String): String {
         // todo read https://commonsware.com/blog/2016/03/15/how-consume-content-uri.html
+<<<<<<< HEAD
+        // https://developer.android.com/training/secure-file-sharing/retrieve-info
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
         // check if file exists
         val file: File = File(context.getExternalFilesDir(folder), fileName)

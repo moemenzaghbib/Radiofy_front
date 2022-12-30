@@ -180,29 +180,54 @@ class PostDetails : AppCompatActivity() {
             if(comment_input.text?.isEmpty() == true){
                 comment_input_layout.error = "comment cannot be empty"
             }else {
+
                 val mapCommentAdd: HashMap<String, String> = HashMap()
                 mapCommentAdd["content"] = comment_input.text.toString()
                 mapCommentAdd["email"] = email.toString()
                 mapCommentAdd["title"] = title.toString()
                 println(mapCommentAdd)
-                apiInterface.addComment(mapCommentAdd).enqueue(object: Callback<ArrayList<data>> {
-                        override fun onResponse(
-                            call: Call<ArrayList<data>>,
-                            response: Response<ArrayList<data>>
-                        ) {val comments = response.body()
-                            val list = mutableListOf<Comment>()
-                            recylcerCommentsAdapter.updateData()
-                            recylcerCommentsAdapter = CommentAdapter(list)
-                            recylcerComments.adapter = recylcerCommentsAdapter
-                            recylcerComments.layoutManager = LinearLayoutManager(this@PostDetails, LinearLayoutManager.VERTICAL ,false)
+                apiInterface.addComment(mapCommentAdd).enqueue((object: Callback<data> {
+                    override fun onResponse(
+                        call: Call<data>,
+                        response: Response<data>
+                    ) {
+                        comment_input.getText()?.clear()
+                        recylcerCommentsAdapter.updateData()
+                        apiInterface.getComments(map).enqueue(object: Callback<ArrayList<data>>{
+                            override fun onResponse(
+                                call: Call<ArrayList<data>>,
+                                response: Response<ArrayList<data>>
+                            ) {
+                                val comments = response.body()
+                                if(comments!=null){
+                                    println("first test\n"+comments)
+                                    val list = mutableListOf<Comment>()
 
-                        }
+                                    for(i in comments){
+                                        list.add(Comment(i.key.toString(),i.value.toString()))
 
-                        override fun onFailure(call: Call<ArrayList<data>>, t: Throwable) {
-                            TODO("Not yet implemented")
-                        }
+                                    }
 
-                    })
+                                    recylcerCommentsAdapter = CommentAdapter(list)
+                                    recylcerComments.adapter = recylcerCommentsAdapter
+                                    recylcerComments.layoutManager = LinearLayoutManager(this@PostDetails, LinearLayoutManager.VERTICAL ,false)
+
+                                }
+                            }
+
+                            override fun onFailure(call: Call<ArrayList<data>>, t: Throwable) {
+                                println("khlet commnttr")
+                            }
+
+
+                        })
+                    }
+
+                    override fun onFailure(call: Call<data>, t: Throwable) {
+                        TODO("Not yet implemented")
+                    }
+
+                }))
             }
         }
 

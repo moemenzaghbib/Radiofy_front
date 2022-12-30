@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+/*
+ * RadioBrowserSearch.kt
+ * Implements the RadioBrowserSearch class
+ * A RadioBrowserSearch performs searches on the radio-browser.info database
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.search
@@ -6,7 +21,14 @@ import android.content.Context
 import com.android.volley.*
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
+<<<<<<< HEAD
+import com.example.myapplication.Keys
+import com.example.myapplication.helpers.LogHelper
+import com.example.myapplication.helpers.NetworkHelper
+import com.example.myapplication.helpers.PreferencesHelper
+=======
 import com.example.myapplication.BuildConfig.VERSION_NAME
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import com.google.gson.GsonBuilder
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.GlobalScope
@@ -14,10 +36,15 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import org.json.JSONArray
 import com.example.myapplication.BuildConfig
+<<<<<<< HEAD
+import com.squareup.picasso.BuildConfig.VERSION_NAME
+import de.hdodenhof.circleimageview.BuildConfig.VERSION_NAME
+=======
 import com.example.myapplication.Keys
 import com.example.myapplication.helpers.LogHelper
 import com.example.myapplication.helpers.NetworkHelper
 import com.example.myapplication.helpers.PreferencesHelper
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 /*

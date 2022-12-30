@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+=======
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
     <Button
         android:id="@+id/card_add_new_station"
         style="?attr/materialButtonOutlinedStyle"
+<<<<<<< HEAD
+        android:layout_width="match_parent"
+=======
         android:layout_width="0dp"
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
@@ -19,7 +31,11 @@
         app:icon="@drawable/ic_add_24dp"
         app:iconGravity="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
+<<<<<<< HEAD
+
+=======
         app:layout_constraintEnd_toEndOf="parent"
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

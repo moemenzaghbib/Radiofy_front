@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+/*
+ * BackupHelper.kt
+ * Implements the BackupHelper object
+ * A BackupHelper provides helper methods for backing up and restoring the radio station collection
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
@@ -7,6 +22,12 @@ import android.content.Context
 import android.net.Uri
 import android.widget.Toast
 import com.example.myapplication.R
+<<<<<<< HEAD
+//import com.example.myapplication.helpers.CollectionHelper
+//import com.example.myapplication.helpers.FileHelper
+//import com.example.myapplication.helpers.LogHelper
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import java.io.*
 import java.util.*
 import java.util.zip.ZipEntry

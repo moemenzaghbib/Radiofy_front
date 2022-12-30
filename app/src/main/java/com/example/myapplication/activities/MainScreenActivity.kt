@@ -84,15 +84,19 @@ class MainScreenActivity : AppCompatActivity() {
 ////
 ////                    true
 ////                }
-////                R.id.messages -> {
-////                    Toast.makeText(this,"messahes",Toast.LENGTH_LONG).show()
-////                    true
-////                }
-////                R.id.search -> {
-////                    Toast.makeText(this,"search",Toast.LENGTH_LONG).show()
-////                    true
-////                }
-               R.id.home1 -> {
+                R.id.music -> {
+                    startActivity(Intent(this, MusicActivity ::class.java).apply {
+//                        putExtra("email" ,  email.toString())
+                    })
+                    true
+                }
+                R.id.radio -> {
+                    startActivity(Intent(this, MainRadio ::class.java).apply {
+//                        putExtra("email" ,  email.toString())
+                    })
+                    true
+                }
+               R.id.chat -> {
                    startActivity(Intent(this, ChatRoomActivity ::class.java).apply {
                        putExtra("email" ,  email.toString())
                    })

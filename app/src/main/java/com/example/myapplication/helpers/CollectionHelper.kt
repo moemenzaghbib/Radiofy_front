@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+/*
+ * CollectionHelper.kt
+ * Implements the CollectionHelper object
+ * A CollectionHelper provides helper methods for the collection of stations
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
@@ -19,7 +34,10 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import com.example.myapplication.Keys
 import com.example.myapplication.R
+<<<<<<< HEAD
+=======
 import com.example.myapplication.core.Collection
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import com.example.myapplication.core.Station
 import com.example.myapplication.search.RadioBrowserResult
 import java.io.File
@@ -37,7 +55,11 @@ object CollectionHelper {
 
 
     /* Checks if station is already in collection */
+<<<<<<< HEAD
+    fun isNewStation(collection: com.example.myapplication.core.Collection, station: Station): Boolean {
+=======
     fun isNewStation(collection: Collection, station: Station): Boolean {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations.forEach {
             if (it.getStreamUri() == station.getStreamUri()) return false
         }
@@ -46,7 +68,11 @@ object CollectionHelper {
 
 
     /* Checks if station is already in collection */
+<<<<<<< HEAD
+    fun isNewStation(collection: com.example.myapplication.core.Collection, remoteStationLocation: String): Boolean {
+=======
     fun isNewStation(collection: Collection, remoteStationLocation: String): Boolean {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations.forEach {
             if (it.remoteStationLocation == remoteStationLocation) return false
         }
@@ -89,8 +115,13 @@ object CollectionHelper {
 
 
     /* Updates radio station in collection */
+<<<<<<< HEAD
+    fun updateStation(context: Context, collection: com.example.myapplication.core.Collection, station: Station): com.example.myapplication.core.Collection {
+        var updatedCollection: com.example.myapplication.core.Collection = collection
+=======
     fun updateStation(context: Context, collection: Collection, station: Station): Collection {
         var updatedCollection: Collection = collection
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
         // CASE: Update station retrieved from radio browser
         if (station.radioBrowserStationUuid.isNotEmpty()) {
@@ -137,7 +168,11 @@ object CollectionHelper {
 
 
     /* Adds new radio station to collection */
+<<<<<<< HEAD
+    fun addStation(context: Context, collection: com.example.myapplication.core.Collection, newStation: Station): com.example.myapplication.core.Collection {
+=======
     fun addStation(context: Context, collection: Collection, newStation: Station): Collection {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         // check validity
         if (!newStation.isValid()) {
             Toast.makeText(context, R.string.toastmessage_station_not_valid, Toast.LENGTH_LONG).show()
@@ -151,7 +186,11 @@ object CollectionHelper {
         }
         // all clear -> add station
         else {
+<<<<<<< HEAD
+            var updatedCollection: com.example.myapplication.core.Collection = collection
+=======
             var updatedCollection: Collection = collection
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
             val updatedStationList: MutableList<Station> = collection.stations.toMutableList()
             // add station
             updatedStationList.add(newStation)
@@ -168,7 +207,11 @@ object CollectionHelper {
 
 
     /* Sets station image - determines station by remote image file location */
+<<<<<<< HEAD
+    fun setStationImageWithRemoteLocation(context: Context, collection: com.example.myapplication.core.Collection, tempImageFileUri: String, remoteFileLocation: String, imageManuallySet: Boolean = false): com.example.myapplication.core.Collection {
+=======
     fun setStationImageWithRemoteLocation(context: Context, collection: Collection, tempImageFileUri: String, remoteFileLocation: String, imageManuallySet: Boolean = false): Collection {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations.forEach { station ->
             // compare image location protocol-agnostic (= without http / https)
             if (station.remoteImageLocation.substringAfter(":") == remoteFileLocation.substringAfter(":")) {
@@ -185,7 +228,11 @@ object CollectionHelper {
 
 
     /* Sets station image - determines station by remote image file location */
+<<<<<<< HEAD
+    fun setStationImageWithStationUuid(context: Context, collection: com.example.myapplication.core.Collection, tempImageFileUri: String, stationUuid: String, imageManuallySet: Boolean = false): com.example.myapplication.core.Collection {
+=======
     fun setStationImageWithStationUuid(context: Context, collection: Collection, tempImageFileUri: String, stationUuid: String, imageManuallySet: Boolean = false): Collection {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations.forEach { station ->
             // find stattion by uuid
             if (station.uuid == stationUuid) {
@@ -217,7 +264,11 @@ object CollectionHelper {
 
 
     /* Get station from collection for given UUID */
+<<<<<<< HEAD
+    fun getStation(collection: com.example.myapplication.core.Collection, stationUuid: String): Station {
+=======
     fun getStation(collection: Collection, stationUuid: String): Station {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations.forEach { station ->
                 if (station.uuid == stationUuid) {
                     return station
@@ -233,7 +284,11 @@ object CollectionHelper {
 
 
     /* Get station from collection for given Stream Uri */
+<<<<<<< HEAD
+    fun getStationWithStreamUri(collection: com.example.myapplication.core.Collection, streamUri: String): Station {
+=======
     fun getStationWithStreamUri(collection: Collection, streamUri: String): Station {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations.forEach { station ->
             if (station.getStreamUri() == streamUri) {
                 return station
@@ -249,7 +304,11 @@ object CollectionHelper {
 
 
     /* Gets next station within collection */
+<<<<<<< HEAD
+    fun getNextStation(collection: com.example.myapplication.core.Collection, stationUuid: String): Station {
+=======
     fun getNextStation(collection: Collection, stationUuid: String): Station {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         val currentStationPosition: Int = getStationPosition(collection, stationUuid)
         LogHelper.d(TAG, "Number of stations: ${collection.stations.size} | current position: $currentStationPosition") // todo remove
         if (collection.stations.isEmpty() || currentStationPosition == -1) {
@@ -263,7 +322,11 @@ object CollectionHelper {
 
 
     /* Gets previous station within collection */
+<<<<<<< HEAD
+    fun getPreviousStation(collection: com.example.myapplication.core.Collection, stationUuid: String): Station {
+=======
     fun getPreviousStation(collection: Collection, stationUuid: String): Station {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         val currentStationPosition: Int = getStationPosition(collection, stationUuid)
         LogHelper.d(TAG, "Number of stations: ${collection.stations.size} | current position: $currentStationPosition") // todo remove
         if (collection.stations.isEmpty() || currentStationPosition == -1) {
@@ -277,7 +340,11 @@ object CollectionHelper {
 
 
     /* Get the position from collection for given UUID */
+<<<<<<< HEAD
+    fun getStationPosition(collection: com.example.myapplication.core.Collection, stationUuid: String): Int {
+=======
     fun getStationPosition(collection: Collection, stationUuid: String): Int {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations.forEachIndexed { stationId, station ->
             if (station.uuid == stationUuid) {
                 return stationId
@@ -288,7 +355,11 @@ object CollectionHelper {
 
 
     /* Get the position from collection for given radioBrowserStationUuid */
+<<<<<<< HEAD
+    fun getStationPositionFromRadioBrowserStationUuid(collection: com.example.myapplication.core.Collection, radioBrowserStationUuid: String): Int {
+=======
     fun getStationPositionFromRadioBrowserStationUuid(collection: Collection, radioBrowserStationUuid: String): Int {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations.forEachIndexed { stationId, station ->
             if (station.radioBrowserStationUuid == radioBrowserStationUuid) {
                 return stationId
@@ -299,7 +370,11 @@ object CollectionHelper {
 
 
     /* Get name of station from collection for given UUID */
+<<<<<<< HEAD
+    fun getStationName(collection: com.example.myapplication.core.Collection, stationUuid: String): String {
+=======
     fun getStationName(collection: Collection, stationUuid: String): String {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations.forEach { station ->
             if (station.uuid == stationUuid) {
                 return station.name
@@ -310,7 +385,11 @@ object CollectionHelper {
 
 
     /* Saves the playback state of a given station */
+<<<<<<< HEAD
+    fun savePlaybackState(context: Context, collection: com.example.myapplication.core.Collection, station: Station, playbackState: Int): com.example.myapplication.core.Collection {
+=======
     fun savePlaybackState(context: Context, collection: Collection, station: Station, playbackState: Int): Collection {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations.forEach { it ->
             // reset playback state everywhere
             it.playbackState = PlaybackStateCompat.STATE_STOPPED
@@ -328,7 +407,11 @@ object CollectionHelper {
 
 
     /* Saves collection of radio stations */
+<<<<<<< HEAD
+    fun saveCollection (context: Context, collection: com.example.myapplication.core.Collection, async: Boolean = true): Date {
+=======
     fun saveCollection (context: Context, collection: Collection, async: Boolean = true): Date {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         LogHelper.v(TAG, "Saving collection of radio stations to storage. Async = ${async}. Size = ${collection.stations.size}")
         // get modification date
         val date: Date = Calendar.getInstance().time
@@ -356,7 +439,11 @@ object CollectionHelper {
 
 
     /* Export collection of stations as M3U */
+<<<<<<< HEAD
+    fun exportCollectionM3u(context: Context, collection: com.example.myapplication.core.Collection) {
+=======
     fun exportCollectionM3u(context: Context, collection: Collection) {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         LogHelper.v(TAG, "Exporting collection of stations as M3U")
         // export collection as M3U - launch = fire & forget (no return value from save collection)
         if (collection.stations.size > 0) {
@@ -366,7 +453,11 @@ object CollectionHelper {
 
 
     /* Create M3U string from collection of stations */
+<<<<<<< HEAD
+    fun createM3uString(collection: com.example.myapplication.core.Collection): String {
+=======
     fun createM3uString(collection: Collection): String {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         val m3uString = StringBuilder()
         /* Extended M3U Format
         #EXTM3U
@@ -450,7 +541,11 @@ object CollectionHelper {
 
 
     /* Sorts radio stations by name */
+<<<<<<< HEAD
+    fun sortCollection(collection: com.example.myapplication.core.Collection): com.example.myapplication.core.Collection {
+=======
     fun sortCollection(collection: Collection): Collection {
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         collection.stations = collection.stations.sortedWith(compareByDescending<Station> { it.starred }.thenBy { it.name.lowercase(Locale.getDefault()) }) as MutableList<Station>
         return collection
     }

@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+/*
+ * RadioBrowserResult.kt
+ * Implements the RadioBrowserResultAdapter class
+ * A RadioBrowserResultAdapter is a custom adapter providing search result views for a RecyclerView
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.search
@@ -7,8 +22,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+<<<<<<< HEAD
+import com.example.myapplication.helpers.LogHelper
+import com.google.android.material.textview.MaterialTextView
+
+=======
 import com.google.android.material.textview.MaterialTextView
 import com.example.myapplication.helpers.LogHelper
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 /*

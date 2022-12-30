@@ -4,6 +4,10 @@ import androidx.appcompat.app.AlertDialog
 import com.example.myapplication.helpers.LogHelper
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 /*
  * SelectStreamDialog class
  */

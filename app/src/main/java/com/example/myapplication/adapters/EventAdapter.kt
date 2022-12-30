@@ -13,7 +13,10 @@ import com.example.myapplication.activities.MainScreenActivity
 import com.example.myapplication.activities.PostDetails
 import com.example.myapplication.databinding.EventItemBinding
 import com.example.myapplication.fragments.EventDetailFragment
+<<<<<<< HEAD
+=======
 //import com.example.myapplication.fragments.HomeDirections
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import com.example.myapplication.models.EventItem
 import com.squareup.picasso.Picasso
 //import kotlinx.android.synthetic.main.activity_main.view.*

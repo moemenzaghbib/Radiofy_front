@@ -43,10 +43,17 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import com.example.myapplication.Keys
 import com.example.myapplication.R
+<<<<<<< HEAD
+import com.example.myapplication.collection.CollectionViewModel
+import com.example.myapplication.core.Collection
+import com.example.myapplication.core.Station
+import com.example.myapplication.helpers.*
+=======
 import com.example.myapplication.core.Collection
 import com.example.myapplication.core.Station
 import com.example.myapplication.helpers.*
 
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import java.util.*
 
 
@@ -144,7 +151,11 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
                 setStationName(stationViewHolder, station, position)
                 setStationImage(stationViewHolder, station, position)
                 setStationButtons(stationViewHolder, station)
+<<<<<<< HEAD
+                setEditViews(stationViewHolder, station)
+=======
 //                setEditViews(stationViewHolder, station)
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
                 // show / hide edit views
                 when (expandedStationPosition) {
@@ -154,7 +165,11 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
                         stationViewHolder.playButtonView.isGone = true
                         stationViewHolder.stationStarredView.isGone = true
                         stationViewHolder.editViews.isVisible = true
+<<<<<<< HEAD
+                        stationViewHolder.stationUriEditView.isGone = !editStationStreamsEnabled
+=======
 //                        stationViewHolder.stationUriEditView.isGone = !editStationStreamsEnabled
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
                     }
                     // hide edit views
                     else -> {
@@ -162,7 +177,11 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
                         stationViewHolder.playButtonView.isVisible = true
                         stationViewHolder.stationStarredView.isVisible = station.starred
                         stationViewHolder.editViews.isGone = true
+<<<<<<< HEAD
+                        stationViewHolder.stationUriEditView.isGone = true
+=======
 //                        stationViewHolder.stationUriEditView.isGone = true
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
                     }
                 }
             }
@@ -188,7 +207,46 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
     }
 
 
+<<<<<<< HEAD
+    /* Sets the edit views */
+    private fun setEditViews(stationViewHolder: StationViewHolder, station: Station) {
+        stationViewHolder.stationNameEditView.setText(station.name, TextView.BufferType.EDITABLE)
+        stationViewHolder.stationUriEditView.setText(station.getStreamUri(), TextView.BufferType.EDITABLE)
+        stationViewHolder.stationUriEditView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                handleStationUriInput(stationViewHolder, s, station.getStreamUri())
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {  }
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {  }
+        })
+        stationViewHolder.cancelButton.setOnClickListener {
+            val position: Int = stationViewHolder.bindingAdapterPosition
+            toggleEditViews(position, station.uuid)
+            UiHelper.hideSoftKeyboard(context, stationViewHolder.stationNameEditView)
+        }
+        stationViewHolder.saveButton.setOnClickListener {
+            val position: Int = stationViewHolder.bindingAdapterPosition
+            toggleEditViews(position, station.uuid)
+            saveStation(station, position, stationViewHolder.stationNameEditView.text.toString(), stationViewHolder.stationUriEditView.text.toString())
+            UiHelper.hideSoftKeyboard(context, stationViewHolder.stationNameEditView)
+        }
+        stationViewHolder.placeOnHomeScreenButton.setOnClickListener {
+            val position: Int = stationViewHolder.bindingAdapterPosition
+            ShortcutHelper.placeShortcut(context, station)
+            toggleEditViews(position, station.uuid)
+            UiHelper.hideSoftKeyboard(context, stationViewHolder.stationNameEditView)
+        }
+        stationViewHolder.stationImageChangeView.setOnClickListener {
+            val position: Int = stationViewHolder.bindingAdapterPosition
+            collectionAdapterListener.onChangeImageButtonTapped(station.uuid)
+            stationViewHolder.absoluteAdapterPosition
+            toggleEditViews(position, station.uuid)
+            UiHelper.hideSoftKeyboard(context, stationViewHolder.stationNameEditView)
+        }
+    }
+=======
 
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
     /* Shows / hides the edit view for a station */
@@ -269,10 +327,17 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
             val input: String = s.toString()
             if (input == streamUri) {
                 // enable save button
+<<<<<<< HEAD
+                stationViewHolder.saveButton.isEnabled = true
+            } else {
+                // 1. disable save button
+                stationViewHolder.saveButton.isEnabled = false
+=======
 //                stationViewHolder.saveButton.isEnabled = true
             } else {
                 // 1. disable save button
 //                stationViewHolder.saveButton.isEnabled = false
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
                 // 2. check for valid station uri - and re-enable button
                 if (input.startsWith("http")) {
                     // detect content type on background thread
@@ -287,7 +352,11 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
                                 Keys.MIME_TYPES_HLS.contains(contentType)) {
                             // re-enable save button
                             withContext(Main) {
+<<<<<<< HEAD
+                                stationViewHolder.saveButton.isEnabled = true
+=======
 //                                stationViewHolder.saveButton.isEnabled = true
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
                             }
                         }
                     }
@@ -407,6 +476,26 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
         CollectionHelper.saveCollection(context, collection)
     }
 
+<<<<<<< HEAD
+
+//    /* Initiates update of a station's information */ // todo move to CollectionHelper
+//    private fun updateStation(context: Context, station: Station) {
+//        if (station.radioBrowserStationUuid.isNotEmpty()) {
+//            // get updated station from radio browser - results are handled by onRadioBrowserSearchResults
+//            val radioBrowserSearch: RadioBrowserSearch = RadioBrowserSearch(context, this)
+//            radioBrowserSearch.searchStation(context, station.radioBrowserStationUuid, Keys.SEARCH_TYPE_BY_UUID)
+//        } else if (station.remoteStationLocation.isNotEmpty()) {
+//            // download playlist // todo check content type detection is necessary here
+//            DownloadHelper.downloadPlaylists(context, arrayOf(station.remoteStationLocation))
+//        } else {
+//            LogHelper.w(TAG, "Unable to update station: ${station.name}.")
+//        }
+//    }
+
+
+
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     /* Determines if position is last */
     private fun isPositionFooter(position: Int): Boolean {
         return position == collection.stations.size
@@ -462,7 +551,11 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
      */
     private inner class AddNewViewHolder (listItemAddNewLayout: View) : RecyclerView.ViewHolder(listItemAddNewLayout) {
         val addNewStationView: MaterialButton = listItemAddNewLayout.findViewById(R.id.card_add_new_station)
+<<<<<<< HEAD
+      //  val settingsButtonView: MaterialButton = listItemAddNewLayout.findViewById(R.id.card_settings)
+=======
 //        val settingsButtonView: MaterialButton = listItemAddNewLayout.findViewById(R.id.card_settings)
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     }
     /*
      * End of inner class
@@ -480,12 +573,21 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
 //        val menuButtonView: ImageView = stationCardLayout.findViewById(R.id.menu_button)
         val playButtonView: ImageView = stationCardLayout.findViewById(R.id.playback_button)
         val editViews: Group = stationCardLayout.findViewById(R.id.default_edit_views)
+<<<<<<< HEAD
+        val stationImageChangeView: ImageView = stationCardLayout.findViewById(R.id.change_image_view)
+        val stationNameEditView: TextInputEditText = stationCardLayout.findViewById(R.id.edit_station_name)
+        val stationUriEditView: TextInputEditText = stationCardLayout.findViewById(R.id.edit_stream_uri)
+        val placeOnHomeScreenButton: MaterialButton = stationCardLayout.findViewById(R.id.place_on_home_screen_button)
+        val cancelButton: MaterialButton = stationCardLayout.findViewById(R.id.cancel_button)
+        val saveButton: MaterialButton = stationCardLayout.findViewById(R.id.save_button)
+=======
 //        val stationImageChangeView: ImageView = stationCardLayout.findViewById(R.id.change_image_view)
 //        val stationNameEditView: TextInputEditText = stationCardLayout.findViewById(R.id.edit_station_name)
 //        val stationUriEditView: TextInputEditText = stationCardLayout.findViewById(R.id.edit_stream_uri)
 //        val placeOnHomeScreenButton: MaterialButton = stationCardLayout.findViewById(R.id.place_on_home_screen_button)
 //        val cancelButton: MaterialButton = stationCardLayout.findViewById(R.id.cancel_button)
 //        val saveButton: MaterialButton = stationCardLayout.findViewById(R.id.save_button)
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     }
     /*
      * End of inner class

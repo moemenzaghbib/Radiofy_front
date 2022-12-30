@@ -1,4 +1,19 @@
+<<<<<<< HEAD
+/*
+ * AppThemeHelper.kt
+ * Implements the AppThemeHelper object
+ * A AppThemeHelper can set the different app themes: Light Mode, Dark Mode, Follow System
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+=======
 
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
@@ -8,8 +23,13 @@ import android.content.Context
 import android.content.res.Configuration
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
+<<<<<<< HEAD
+import com.example.myapplication.R
+import com.example.myapplication.Keys
+=======
 import com.example.myapplication.Keys
 import com.example.myapplication.R
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 

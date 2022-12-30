@@ -8,9 +8,15 @@
         android:shortcutLongLabel="@string/shortcut_last_station_long_label"
         android:shortcutDisabledMessage="@string/shortcut_last_station_disabled_message">
         <intent
+<<<<<<< HEAD
+            android:action="org.y20k.transistor.action.START_PLAYER_SERVICE"
+            android:targetPackage="org.y20k.transistor"
+            android:targetClass="com.example.myapplication.activities.MainRadio" >
+=======
             android:action="com.example.myapplication.action.START_PLAYER_SERVICE"
             android:targetPackage="com.example.myapplication"
             android:targetClass="com.example.myapplication.MainActivity" >
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
             <extra android:name="START_LAST_PLAYED_STATION" android:value="true" />
         </intent>
         <categories android:name="android.shortcut.conversation" />

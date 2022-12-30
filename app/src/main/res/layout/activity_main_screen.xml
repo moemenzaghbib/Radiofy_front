@@ -11,14 +11,14 @@
     tools:context=".activities.MainScreenActivity">
     <include layout="@layout/appbar"
         />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frag_home"
         android:name="com.example.myapplication.fragments.Home"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="408dp"
+        android:layout_height="675dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

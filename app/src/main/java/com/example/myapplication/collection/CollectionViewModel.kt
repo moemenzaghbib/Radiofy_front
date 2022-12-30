@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 /*
  * CollectionViewModel.kt
  * Implements the CollectionViewModel class
@@ -10,6 +13,7 @@
  * Licensed under the MIT-License
  * http://opensource.org/licenses/MIT
  */
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.collection
@@ -25,7 +29,10 @@ import androidx.lifecycle.viewModelScope
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import kotlinx.coroutines.launch
 import com.example.myapplication.Keys
+<<<<<<< HEAD
+=======
 import com.example.myapplication.core.Collection
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import com.example.myapplication.helpers.FileHelper
 import com.example.myapplication.helpers.LogHelper
 import java.util.*
@@ -36,12 +43,20 @@ import java.util.*
  */
 class CollectionViewModel(application: Application) : AndroidViewModel(application) {
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     /* Define log tag */
     private val TAG: String = LogHelper.makeLogTag(CollectionViewModel::class.java)
 
 
     /* Main class variables */
+<<<<<<< HEAD
+    val collectionLiveData: MutableLiveData<com.example.myapplication.core.Collection> = MutableLiveData<com.example.myapplication.core.Collection>()
+=======
     val collectionLiveData: MutableLiveData<Collection> = MutableLiveData<Collection>()
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     val collectionSizeLiveData: MutableLiveData<Int> = MutableLiveData<Int>()
     private var modificationDateViewModel: Date = Date()
     private var collectionChangedReceiver: BroadcastReceiver
@@ -86,7 +101,11 @@ class CollectionViewModel(application: Application) : AndroidViewModel(applicati
         LogHelper.v(TAG, "Loading collection of stations from storage")
         viewModelScope.launch {
             // load collection on background thread
+<<<<<<< HEAD
+            val collection: com.example.myapplication.core.Collection = FileHelper.readCollectionSuspended(getApplication())
+=======
             val collection: Collection = FileHelper.readCollectionSuspended(getApplication())
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
             // get updated modification date
             modificationDateViewModel = collection.modificationDate
             // update collection view model
@@ -95,5 +114,8 @@ class CollectionViewModel(application: Application) : AndroidViewModel(applicati
             collectionSizeLiveData.value = collection.stations.size
         }
     }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 }

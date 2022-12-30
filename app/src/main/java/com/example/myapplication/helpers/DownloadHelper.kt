@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+/*
+ * DownloadHelper.kt
+ * Implements the DownloadHelper object
+ * A DownloadHelper provides helper methods for downloading files
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
@@ -13,7 +28,10 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import com.example.myapplication.Keys
 import com.example.myapplication.R
+<<<<<<< HEAD
+=======
 import com.example.myapplication.core.Collection
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import com.example.myapplication.core.Station
 import com.example.myapplication.extensions.copy
 import java.util.*
@@ -29,7 +47,11 @@ object DownloadHelper {
 
 
     /* Main class variables */
+<<<<<<< HEAD
+    private lateinit var collection: com.example.myapplication.core.Collection
+=======
     private lateinit var collection: Collection
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
     private lateinit var downloadManager: DownloadManager
     private lateinit var activeDownloads: ArrayList<Long>
     private lateinit var modificationDate: Date

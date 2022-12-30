@@ -5,9 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/rounded_edittext">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -17,9 +22,13 @@
             tools:ignore="MissingConstraints">
 
             <ImageView
+                android:background="@drawable/rounded_edittext"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
                 android:id="@+id/imagedetailPost"
-                android:layout_width="match_parent"
-                android:layout_height="193dp"
+                android:layout_width="386dp"
+                android:layout_height="181dp"
                 android:scaleType="centerCrop"
                 android:src="#888888" />
 
@@ -76,10 +85,12 @@
 
         </FrameLayout>
         <LinearLayout
-            android:layout_width="100dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+
             android:layout_gravity="end">
 
 
@@ -98,17 +109,20 @@
 
             <ImageView
                 android:id="@+id/like_button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
 
-                android:layout_weight="1"
+                android:layout_width="53dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="16dp"
+
 
                 android:src="@drawable/black_like_icon_png_12" />
 
 
         </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
+            android:background="@drawable/rounded_edittext"
+
             android:id="@+id/commentsRecycleView"
             android:layout_width="384dp"
             android:layout_height="105dp"
@@ -117,26 +131,33 @@
             android:layout_marginEnd="8dp" />
 
         <LinearLayout
-            android:layout_width="400dp"
-            android:layout_height="52dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="18dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+
+            android:layout_gravity="end">
 
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/comment_input_layout"
                 android:layout_width="300dp"
-                android:layout_height="52dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_edittext"
                 android:layout_marginStart="4dp"
+                android:layout_gravity="center"
                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/comment_input"
                     android:layout_width="match_parent"
-                    android:layout_height="52dp"
+                    android:layout_height="40dp"
                     android:hint="Post your comment!"
-                    android:background="@drawable/rounded_edittext"/>
+
+                    android:backgroundTint="@color/white"
+                    />
 
 
             </com.google.android.material.textfield.TextInputLayout>

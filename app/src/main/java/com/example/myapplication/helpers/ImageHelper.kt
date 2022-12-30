@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+/*
+ * ImageHelper.kt
+ * Implements the ImageHelper object
+ * An ImageHelper provides helper methods for image related operations
+ *
+ * This file is part of
+ * TRANSISTOR - Radio App for Android
+ *
+ * Copyright (c) 2015-22 - Y20K.org
+ * Licensed under the MIT-License
+ * http://opensource.org/licenses/MIT
+ */
+=======
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 package com.example.myapplication.helpers
@@ -9,8 +24,13 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.net.toUri
 import androidx.palette.graphics.Palette
+<<<<<<< HEAD
+import com.example.myapplication.R
+import com.example.myapplication.Keys
+=======
 import com.example.myapplication.Keys
 import com.example.myapplication.R
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 import java.io.IOException
 import java.io.InputStream
 
@@ -51,7 +71,11 @@ object ImageHelper {
 
         // get default image
         if (bitmap == null) {
+<<<<<<< HEAD
+            bitmap = ContextCompat.getDrawable(context, R.drawable.ic_default_station_image_72dp)!!.toBitmap()
+=======
             bitmap = ContextCompat.getDrawable(context, R.drawable.radio_fm_icon)!!.toBitmap()
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         }
 
         return bitmap
@@ -154,7 +178,11 @@ object ImageHelper {
 
         // get default image
         if (bitmap == null) {
+<<<<<<< HEAD
+            bitmap = ContextCompat.getDrawable(context, R.drawable.ic_default_station_image_72dp)!!.toBitmap()
+=======
             bitmap = ContextCompat.getDrawable(context, R.drawable.radio_fm_icon)!!.toBitmap()
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
         }
 
         return bitmap
