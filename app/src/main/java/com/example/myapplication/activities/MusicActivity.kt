@@ -33,7 +33,7 @@ class MusicActivity : AppCompatActivity() {
         lateinit var musicListSearch : ArrayList<Music>
         var search: Boolean = false
         var themeIndex: Int = 0
-        val currentTheme = arrayOf( R.style.coolBlue, R.style.coolPurple, R.style.coolGreen, R.style.coolBlack)
+        val currentTheme = arrayOf( R.style.coolBlue)
         val currentThemeNav = arrayOf( R.style.coolPurpleNav)
         val currentGradient = arrayOf( R.drawable.gradient_purple)
         var sortOrder: Int = 0
