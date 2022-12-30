@@ -1,8 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+<<<<<<< HEAD
+    android:id="@+id/onboarding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="visible">
 
+<!--    <com.google.android.material.textview.MaterialTextView-->
+<!--        android:id="@+id/onboarding_headline"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="96dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:text="@string/onboarding_app_get_started"-->
+<!--        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"-->
+<!--        android:textColor="@color/text_default"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.501"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
+<!--    <ImageView-->
+<!--        android:id="@+id/arrow_left"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="32dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/onboarding_headline"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/onboarding_headline"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/onboarding_headline"-->
+<!--        app:srcCompat="@drawable/ic_arrow_upward_24dp" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/arrow_right"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/onboarding_headline"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/onboarding_headline"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/onboarding_headline"-->
+<!--        app:srcCompat="@drawable/ic_arrow_upward_24dp" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/app_icon"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="48dp"-->
+<!--        android:contentDescription="@string/descr_app_icon"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/onboarding_headline"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/onboarding_headline"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/onboarding_headline"-->
+<!--        app:srcCompat="@mipmap/ic_launcher" />-->
+
+<!--    <com.google.android.material.textview.MaterialTextView-->
+<!--        android:id="@+id/app_name"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:text="@string/app_name"-->
+<!--        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"-->
+<!--        android:textColor="@color/text_default"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/app_icon"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/app_icon"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/app_icon" />-->
+
+<!--    <com.google.android.material.textview.MaterialTextView-->
+<!--        android:id="@+id/app_description"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/onboarding_app_description"-->
+<!--        android:textAppearance="@style/TextAppearance.Material3.LabelMedium"-->
+<!--        android:textColor="@color/text_lightweight"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/app_name"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/app_name"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/app_name" />-->
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progress_indicator"-->
+<!--        style="?android:attr/progressBarStyle"-->
+<!--        android:layout_width="24dp"-->
+<!--        android:layout_height="24dp"-->
+<!--        android:layout_marginTop="42dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/app_description"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/app_description"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/app_description" />-->
+
+<!--    <com.google.android.material.textview.MaterialTextView-->
+=======
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/onboarding_layout"
     android:layout_width="match_parent"
@@ -70,9 +156,8 @@
         app:layout_constraintTop_toBottomOf="@+id/app_icon" />
 
 
-
     <!--    <com.google.android.material.textview.MaterialTextView-->
-
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 <!--        android:id="@+id/import_running_text"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
@@ -108,7 +193,24 @@
 <!--        app:layout_constraintStart_toStartOf="@+id/rodriguez_quote_1"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/rodriguez_quote_1" />-->
 
+<<<<<<< HEAD
+<!--    &lt;!&ndash; Constraintlayout View Groups &ndash;&gt;-->
 
+<!--    <androidx.constraintlayout.widget.Group-->
+<!--        android:id="@+id/onboarding_import_views"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:visibility="invisible"-->
+<!--        app:constraint_referenced_ids="progress_indicator,import_running_text" />-->
+
+<!--    <androidx.constraintlayout.widget.Group-->
+<!--        android:id="@+id/onboarding_quote_views"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:visibility="visible"-->
+<!--        app:constraint_referenced_ids="rodriguez_quote_1,rodriguez_quote_2" />-->
+=======
+    <!-- Constraintlayout View Groups -->
 
     <ProgressBar
         android:id="@+id/progress_indicator"
@@ -134,6 +236,7 @@
         android:layout_height="0dp"
         android:visibility="visible"
          />
+>>>>>>> 539e1dd2488e299a3a264c5982dd4d8f087c2889
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
