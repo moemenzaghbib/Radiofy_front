@@ -1,15 +1,3 @@
-/*
- * PlayerService.kt
- * Implements the PlayerService class
- * PlayerService is Transistor's foreground service that plays radio station audio
- *
- * This file is part of
- * TRANSISTOR - Radio App for Android
- *
- * Copyright (c) 2015-22 - Y20K.org
- * Licensed under the MIT-License
- * http://opensource.org/licenses/MIT
- */
 
 
 package com.example.myapplication.playback
@@ -36,9 +24,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.media.MediaBrowserServiceCompat
-import com.example.myapplication.Keys
-import com.example.myapplication.collection.CollectionProvider
-import com.example.myapplication.helpers.LogHelper
 import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.analytics.AnalyticsListener
 import com.google.android.exoplayer2.audio.AudioAttributes
@@ -56,14 +41,15 @@ import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
 import com.google.android.exoplayer2.util.Util
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.Main
+import com.example.myapplication.Keys
 import com.example.myapplication.R
+import com.example.myapplication.collection.CollectionProvider
 import com.example.myapplication.core.Collection
 import com.example.myapplication.core.Station
-import com.example.myapplication.ui.PlayerState
 import com.example.myapplication.helpers.*
+import com.example.myapplication.ui.PlayerState
 import java.util.*
 import kotlin.math.min
-
 
 /*
  * PlayerService class
@@ -238,9 +224,6 @@ class PlayerService(): MediaBrowserServiceCompat() {
 
     /* Overrides onGetRoot from MediaBrowserService */ // todo: implement a hierarchical structure -> https://github.com/googlesamples/android-UniversalMusicPlayer/blob/47da058112cee0b70442bcd0370c1e46e830c66b/media/src/main/java/com/example/android/uamp/media/library/BrowseTree.kt
     override fun onGetRoot(clientPackageName: String, clientUid: Int, rootHints: Bundle?): BrowserRoot {
-        // Credit: https://github.com/googlesamples/android-UniversalMusicPlayer (->  MusicService)
-        // LogHelper.d(TAG, "OnGetRoot: clientPackageName=$clientPackageName; clientUid=$clientUid ; rootHints=$rootHints")
-        // to ensure you are not allowing any arbitrary app to browse your app's contents, you need to check the origin
         if (!packageValidator.isKnownCaller(clientPackageName, clientUid)) {
             // request comes from an untrusted package
             LogHelper.i(TAG, "OnGetRoot: Browsing NOT ALLOWED for unknown caller. "
@@ -248,8 +231,7 @@ class PlayerService(): MediaBrowserServiceCompat() {
                     + clientPackageName)
             return BrowserRoot(Keys.MEDIA_BROWSER_ROOT_EMPTY, null)
         } else {
-            // content style extras: see https://developer.android.com/training/cars/media#apply_content_style
-            val CONTENT_STYLE_SUPPORTED = "android.media.browse.CONTENT_STYLE_SUPPORTED"
+           val CONTENT_STYLE_SUPPORTED = "android.media.browse.CONTENT_STYLE_SUPPORTED"
             val CONTENT_STYLE_PLAYABLE_HINT = "android.media.browse.CONTENT_STYLE_PLAYABLE_HINT"
             val CONTENT_STYLE_BROWSABLE_HINT = "android.media.browse.CONTENT_STYLE_BROWSABLE_HINT"
             val CONTENT_STYLE_LIST_ITEM_HINT_VALUE = 1
@@ -318,11 +300,7 @@ class PlayerService(): MediaBrowserServiceCompat() {
     /* Creates a forwardingPlayer that overrides default exoplayer behavior */
     private fun createForwardingPlayer() : ForwardingPlayer {
         return object : ForwardingPlayer(player) {
-            // emulate headphone buttons
-            // start/pause: adb shell input keyevent 85
-            // next: adb shell input keyevent 87
-            // prev: adb shell input keyevent 88
-            override fun stop(reset: Boolean) {
+          override fun stop(reset: Boolean) {
                 stop()
             }
             override fun stop() {
@@ -364,12 +342,6 @@ class PlayerService(): MediaBrowserServiceCompat() {
         mediaSession = MediaSessionCompat(this, TAG).apply {
             setSessionActivity(sessionActivityPendingIntent)
             isActive = true
-//            setCallback(object : MediaSessionCompat.Callback() { // todo remove
-//                override fun onPause() {
-//                    LogHelper.e(TAG, "Ding")
-//                    super.onPause()
-//                }
-//            })
         }
         sessionToken = mediaSession.sessionToken
     }
@@ -594,8 +566,6 @@ class PlayerService(): MediaBrowserServiceCompat() {
                     LogHelper.w(TAG, "Unsupported metadata received (type = ${entry.javaClass.simpleName})")
                     updateMetadata(null)
                 }
-                // TODO implement HLS metadata extraction (Id3Frame / PrivFrame)
-                // https://exoplayer.dev/doc/reference/com/google/android/exoplayer2/metadata/Metadata.Entry.html
             }
         }
     }

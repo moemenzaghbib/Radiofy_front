@@ -1,15 +1,3 @@
-/*
- * PreferencesHelper.kt
- * Implements the PreferencesHelper object
- * A PreferencesHelper provides helper methods for the saving and loading values from shared preferences
- *
- * This file is part of
- * TRANSISTOR - Radio App for Android
- *
- * Copyright (c) 2015-22 - Y20K.org
- * Licensed under the MIT-License
- * http://opensource.org/licenses/MIT
- */
 
 
 package com.example.myapplication.helpers
@@ -19,10 +7,10 @@ import android.content.SharedPreferences
 import android.support.v4.media.session.PlaybackStateCompat
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import com.example.myapplication.Keys
-import com.example.myapplication.ui.PlayerState
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.gson.Gson
+import com.example.myapplication.Keys
+import com.example.myapplication.ui.PlayerState
 import java.util.*
 
 

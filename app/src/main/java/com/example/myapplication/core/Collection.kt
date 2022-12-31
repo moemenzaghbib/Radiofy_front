@@ -16,9 +16,8 @@ package com.example.myapplication.core
 import android.os.Parcelable
 import androidx.annotation.Keep
 import com.google.gson.annotations.Expose
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import com.example.myapplication.Keys
-import com.example.myapplication.core.Station
 import java.util.*
 
 

@@ -4,6 +4,7 @@
     android:id="@+id/player_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back_ground_image"
     android:orientation="vertical">
 
     <android.widget.ProgressBar
@@ -18,8 +19,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_window_background"
-        tools:context=".fragments.PlayerFragment">
+
+        tools:context="com.example.myapplication.PlayerFragment">
 
         <!-- STATION LIST -->
         <androidx.recyclerview.widget.RecyclerView
@@ -35,7 +36,8 @@
             android:visibility="gone" />
 
         <!-- PLAYER SHEET -->
-        <include layout="@layout/bottom_sheet_playback_controls" />
+        <include
+            layout="@layout/bottom_sheet_playback_controls" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

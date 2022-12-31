@@ -1,15 +1,3 @@
-/*
- * NetworkHelper.kt
- * Implements the NetworkHelper object
- * A NetworkHelper provides helper methods for network related operations
- *
- * This file is part of
- * TRANSISTOR - Radio App for Android
- *
- * Copyright (c) 2015-22 - Y20K.org
- * Licensed under the MIT-License
- * http://opensource.org/licenses/MIT
- */
 
 
 package com.example.myapplication.helpers
@@ -20,7 +8,6 @@ import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkCapabilities.*
 import com.example.myapplication.Keys
-import com.example.myapplication.helpers.PreferencesHelper
 import java.net.HttpURLConnection
 import java.net.InetAddress
 import java.net.URL
@@ -67,8 +54,7 @@ object NetworkHelper {
         if (activeNetwork != null) {
             val capabilities: NetworkCapabilities? = connMgr.getNetworkCapabilities(activeNetwork)
             if (capabilities != null) {
-                // check if a cellular connection is active
-                result = capabilities.hasTransport(TRANSPORT_CELLULAR)
+               result = capabilities.hasTransport(TRANSPORT_CELLULAR)
             }
         }
         return result

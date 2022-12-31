@@ -1,15 +1,3 @@
-/*
- * NotificationHelper.kt
- * Implements the NotificationHelper class
- * A NotificationHelper creates and configures a notification
- *
- * This file is part of
- * TRANSISTOR - Radio App for Android
- *
- * Copyright (c) 2015-22 - Y20K.org
- * Licensed under the MIT-License
- * http://opensource.org/licenses/MIT
- */
 
 
 package com.example.myapplication.helpers
@@ -20,7 +8,6 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.support.v4.media.session.MediaControllerCompat
 import android.support.v4.media.session.MediaSessionCompat
-import com.example.myapplication.R
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.PlayerNotificationManager
 import kotlinx.coroutines.CoroutineScope
@@ -30,13 +17,10 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.example.myapplication.Keys
+import com.example.myapplication.R
 
 
 
-/*
- * NotificationHelper class
- * Credit: https://github.com/android/uamp/blob/5bae9316b60ba298b6080de1fcad53f6f74eb0bf/common/src/main/java/com/example/android/uamp/media/UampNotificationManager.kt
- */
 class NotificationHelper(private val context: Context, sessionToken: MediaSessionCompat.Token, notificationListener: PlayerNotificationManager.NotificationListener) {
 
     /* Define log tag */
@@ -94,39 +78,6 @@ class NotificationHelper(private val context: Context, sessionToken: MediaSessio
         notificationManager.invalidate()
     }
 
-
-//    /*
-//     * Inner class: Intercept stop button tap
-//     */
-//    private inner class Dispatcher: DefaultControlDispatcher(0L, 0L /* hide fast forward and rewind */) {
-//        override fun dispatchStop(player: Player, reset: Boolean): Boolean {
-//            // Default implementation see: https://github.com/google/ExoPlayer/blob/b1000940eaec9e1202d9abf341a48a58b728053f/library/core/src/main/java/com/google/android/exoplayer2/DefaultControlDispatcher.java#L137
-//            mediaController.sendCommand(Keys.CMD_DISMISS_NOTIFICATION, null, null)
-//            return true
-//        }
-//
-//        override fun dispatchSetPlayWhenReady(player: Player, playWhenReady: Boolean): Boolean {
-//            // changes the default behavior of !playWhenReady from player.pause() to player.stop()
-//            when (playWhenReady) {
-//                true -> player.play()
-//                false -> player.stop()
-//            }
-//            return true
-//        }
-//
-//        override fun dispatchPrevious(player: Player): Boolean {
-//            mediaController.sendCommand(Keys.CMD_PREVIOUS_STATION, null, null)
-//            return true
-//        }
-//
-//        override fun dispatchNext(player: Player): Boolean {
-//            mediaController.sendCommand(Keys.CMD_NEXT_STATION, null, null)
-//            return true
-//        }
-//    }
-//    /*
-//     * End of inner class
-//     */
 
 
     /*

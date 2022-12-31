@@ -1,15 +1,3 @@
-/*
- * FileHelper.kt
- * Implements the FileHelper object
- * A FileHelper provides helper methods for reading and writing files from and to device storage
- *
- * This file is part of
- * TRANSISTOR - Radio App for Android
- *
- * Copyright (c) 2015-22 - Y20K.org
- * Licensed under the MIT-License
- * http://opensource.org/licenses/MIT
- */
 
 
 package com.example.myapplication.helpers
@@ -33,7 +21,6 @@ import kotlinx.coroutines.withContext
 import com.example.myapplication.Keys
 import com.example.myapplication.core.Collection
 import com.example.myapplication.core.Station
-import com.example.myapplication.helpers.LogHelper
 import java.io.*
 import java.net.URL
 import java.text.NumberFormat
@@ -183,7 +170,7 @@ object FileHelper {
 
 
     /* Saves collection of radio stations as JSON text file */
-    fun saveCollection(context: Context, collection: com.example.myapplication.core.Collection, lastSave: Date) {
+    fun saveCollection(context: Context, collection: Collection, lastSave: Date) {
         LogHelper.v(TAG, "Saving collection - Thread: ${Thread.currentThread().name}")
         val collectionSize: Int = collection.stations.size
         // do not override an existing collection with an empty one - except when last station is deleted
@@ -249,11 +236,11 @@ object FileHelper {
 
 
     /* Reads collection of radio stations from storage using GSON */
-    fun readCollection(context: Context): com.example.myapplication.core.Collection {
+    fun readCollection(context: Context): Collection {
         LogHelper.v(TAG, "Reading collection - Thread: ${Thread.currentThread().name}")
         // get JSON from text file
         val json: String = readTextFile(context, Keys.FOLDER_COLLECTION, Keys.COLLECTION_FILE)
-        var collection: com.example.myapplication.core.Collection = com.example.myapplication.core.Collection()
+        var collection: Collection = Collection()
         when (json.isNotBlank()) {
             // convert JSON and return as collection
             true -> try {
@@ -262,7 +249,6 @@ object FileHelper {
                 LogHelper.e(TAG, "Error Reading collection.\nContent: $json")
                 e.printStackTrace()
             }
-            else -> println ("")
         }
         return collection
     }
@@ -306,7 +292,7 @@ object FileHelper {
 
 
     /* Suspend function: Wrapper for saveCollection */
-    suspend fun saveCollectionSuspended(context: Context, collection: com.example.myapplication.core.Collection, lastUpdate: Date) {
+    suspend fun saveCollectionSuspended(context: Context, collection: Collection, lastUpdate: Date) {
         return suspendCoroutine { cont ->
             cont.resume(saveCollection(context, collection, lastUpdate))
         }
@@ -314,7 +300,7 @@ object FileHelper {
 
 
     /* Suspend function: Wrapper for readCollection */
-    suspend fun readCollectionSuspended(context: Context): com.example.myapplication.core.Collection =
+    suspend fun readCollectionSuspended(context: Context): Collection =
         withContext(Dispatchers.IO) {
             readCollection(context)
         }
@@ -329,7 +315,7 @@ object FileHelper {
 
 
     /* Suspend function: Exports collection of stations as M3U file - local backup copy */
-    suspend fun backupCollectionAsM3uSuspended(context: Context, collection: com.example.myapplication.core.Collection) {
+    suspend fun backupCollectionAsM3uSuspended(context: Context, collection: Collection) {
         return suspendCoroutine { cont ->
             LogHelper.v(TAG, "Backing up collection as M3U - Thread: ${Thread.currentThread().name}")
             // create M3U string
@@ -402,7 +388,6 @@ object FileHelper {
 
 
     /* Converts byte value into a human readable format */
-    // Source: https://programming.guide/java/formatting-byte-size-to-human-readable-format.html
     fun getReadableByteCount(bytes: Long, si: Boolean = true): String {
 
         // check if Decimal prefix symbol (SI) or Binary prefix symbol (IEC) requested
@@ -429,7 +414,6 @@ object FileHelper {
     /* Reads InputStream from file uri and returns it as String */
     private fun readTextFile(context: Context, folder: String, fileName: String): String {
         // todo read https://commonsware.com/blog/2016/03/15/how-consume-content-uri.html
-        // https://developer.android.com/training/secure-file-sharing/retrieve-info
 
         // check if file exists
         val file: File = File(context.getExternalFilesDir(folder), fileName)

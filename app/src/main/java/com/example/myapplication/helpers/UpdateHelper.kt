@@ -1,30 +1,16 @@
-/*
- * UpdateHelper.kt
- * Implements the UpdateHelper class
- * A UpdateHelper provides methods to update a single station or the whole collection of stations
- *
- * This file is part of
- * TRANSISTOR - Radio App for Android
- *
- * Copyright (c) 2015-22 - Y20K.org
- * Licensed under the MIT-License
- * http://opensource.org/licenses/MIT
- */
 
 
 package com.example.myapplication.helpers
 
 import android.content.Context
-import com.example.myapplication.activities.MusicActivity.Companion.search
-import com.example.myapplication.core.Station
-import com.example.myapplication.search.RadioBrowserSearch
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import com.example.myapplication.Keys
 import com.example.myapplication.core.Collection
+import com.example.myapplication.core.Station
 import com.example.myapplication.search.RadioBrowserResult
-
+import com.example.myapplication.search.RadioBrowserSearch
 
 
 /*

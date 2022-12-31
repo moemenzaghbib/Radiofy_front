@@ -1,15 +1,3 @@
-/*
- * PlayerController.kt
- * Implements the PlayerController class
- * PlayerController is provides playback controls for PlayerService
- *
- * This file is part of
- * TRANSISTOR - Radio App for Android
- *
- * Copyright (c) 2015-22 - Y20K.org
- * Licensed under the MIT-License
- * http://opensource.org/licenses/MIT
- */
 
 
 package com.example.myapplication.playback
@@ -20,7 +8,6 @@ import android.support.v4.media.session.PlaybackStateCompat
 import androidx.core.os.bundleOf
 import com.example.myapplication.Keys
 import com.example.myapplication.helpers.LogHelper
-
 
 
 /*

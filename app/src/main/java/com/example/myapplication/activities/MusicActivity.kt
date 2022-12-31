@@ -33,11 +33,9 @@ class MusicActivity : AppCompatActivity() {
         lateinit var musicListSearch : ArrayList<Music>
         var search: Boolean = false
         var themeIndex: Int = 0
-        val currentTheme = arrayOf( R.style.coolBlue, R.style.coolPurple, R.style.coolGreen, R.style.coolBlack)
-        val currentThemeNav = arrayOf(R.style.coolPinkNav, R.style.coolBlueNav, R.style.coolPurpleNav, R.style.coolGreenNav,
-            R.style.coolBlackNav)
-        val currentGradient = arrayOf(R.drawable.gradient_pink, R.drawable.gradient_blue, R.drawable.gradient_purple, R.drawable.gradient_green,
-            R.drawable.gradient_black)
+        val currentTheme = arrayOf( R.style.coolBlue)
+        val currentThemeNav = arrayOf( R.style.coolPurpleNav)
+        val currentGradient = arrayOf( R.drawable.gradient_purple)
         var sortOrder: Int = 0
         val sortingList = arrayOf(MediaStore.Audio.Media.DATE_ADDED + " DESC", MediaStore.Audio.Media.TITLE,
             MediaStore.Audio.Media.SIZE + " DESC")
@@ -52,9 +50,7 @@ class MusicActivity : AppCompatActivity() {
         binding = ActivityMusicBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //for nav drawer
-//        toggle = ActionBarDrawerToggle(this, binding.root,R.string.open, R.string.close)
-//        binding.root.addDrawerListener(toggle)
-//        toggle.syncState()
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         //checking for dark theme
         if(themeIndex == 4 &&  resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_NO)
@@ -62,8 +58,7 @@ class MusicActivity : AppCompatActivity() {
 
         if(requestRuntimePermission()){
             initializeLayout()
-            //for retrieving favourites data using shared preferences
-            //   FavouriteActivity.favouriteSongs = ArrayList()
+
             val editor = getSharedPreferences("FAVOURITES", MODE_PRIVATE)
             val jsonString = editor.getString("FavouriteSongs", null)
             val typeToken = object : TypeToken<ArrayList<Music>>(){}.type
@@ -71,53 +66,8 @@ class MusicActivity : AppCompatActivity() {
                 val data: ArrayList<Music> = GsonBuilder().create().fromJson(jsonString, typeToken)
                 //   FavouriteActivity.favouriteSongs.addAll(data)
             }
-//            PlaylistActivity.musicPlaylist = MusicPlaylist()
-//            val jsonStringPlaylist = editor.getString("MusicPlaylist", null)
-//            if(jsonStringPlaylist != null){
-//                val dataPlaylist: MusicPlaylist = GsonBuilder().create().fromJson(jsonStringPlaylist, MusicPlaylist::class.java)
-//                PlaylistActivity.musicPlaylist = dataPlaylist
-//            }
         }
 
-//        binding.shuffleBtn.setOnClickListener {
-//            val intent = Intent(this@MainActivity, PlayerActivity::class.java)
-//            intent.putExtra("index", 0)
-//            intent.putExtra("class", "MainActivity")
-//            startActivity(intent)
-//        }
-//        binding.favouriteBtn.setOnClickListener {
-//            startActivity(Intent(this@MainActivity, FavouriteActivity::class.java))
-//        }
-//        binding.playlistBtn.setOnClickListener {
-//            startActivity(Intent(this@MainActivity, PlaylistActivity::class.java))
-//        }
-//        binding.playNextBtn.setOnClickListener {
-//            startActivity(Intent(this@MainActivity, PlayNext::class.java))
-//        }
-//        binding.navView.setNavigationItemSelectedListener{
-//            when(it.itemId)
-//            {
-//                R.id.navFeedback -> startActivity(Intent(this@MainActivity, FeedbackActivity::class.java))
-//                R.id.navSettings -> startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
-//                R.id.navAbout -> startActivity(Intent(this@MainActivity, AboutActivity::class.java))
-//                R.id.navExit -> {
-//                    val builder = MaterialAlertDialogBuilder(this)
-//                    builder.setTitle("Exit")
-//                        .setMessage("Do you want to close app?")
-//                        .setPositiveButton("Yes"){ _, _ ->
-//                            exitApplication()
-//                        }
-//                        .setNegativeButton("No"){dialog, _ ->
-//                            dialog.dismiss()
-//                        }
-//                    val customDialog = builder.create()
-//                    customDialog.show()
-//
-//                    setDialogBtnBackground(this, customDialog)
-//                }
-//            }
-//            true
-//        }
     }
     //For requesting permission
     private fun requestRuntimePermission() :Boolean{
@@ -142,11 +92,6 @@ class MusicActivity : AppCompatActivity() {
         }
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        if(toggle.onOptionsItemSelected(item))
-//            return true
-//        return super.onOptionsItemSelected(item)
-//    }
 
     @RequiresApi(Build.VERSION_CODES.R)
     @SuppressLint("SetTextI18n")
@@ -215,11 +160,7 @@ class MusicActivity : AppCompatActivity() {
         super.onResume()
         //for storing favourites data using shared preferences
         val editor = getSharedPreferences("FAVOURITES", MODE_PRIVATE).edit()
-        // val jsonString = GsonBuilder().create().toJson(FavouriteActivity.favouriteSongs)
-        // editor.putString("FavouriteSongs", jsonString)
-        //  val jsonStringPlaylist = GsonBuilder().create().toJson(PlaylistActivity.musicPlaylist)
-//        editor.putString("MusicPlaylist", jsonStringPlaylist)
-//        editor.apply()
+
         //for sorting
         val sortEditor = getSharedPreferences("SORTING", MODE_PRIVATE)
         val sortValue = sortEditor.getInt("sortOrder", 0)

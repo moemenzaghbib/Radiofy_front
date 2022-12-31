@@ -27,6 +27,8 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.textview.MaterialTextView
 import com.example.myapplication.Keys
 import com.example.myapplication.R
 import com.example.myapplication.core.Station
@@ -34,8 +36,6 @@ import com.example.myapplication.helpers.LogHelper
 import com.example.myapplication.search.RadioBrowserResult
 import com.example.myapplication.search.RadioBrowserResultAdapter
 import com.example.myapplication.search.RadioBrowserSearch
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.textview.MaterialTextView
 
 
 

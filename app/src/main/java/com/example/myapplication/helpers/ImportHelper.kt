@@ -1,26 +1,14 @@
-/*
- * ImportHelper.kt
- * Implements the ImportHelper object
- * A ImportHelper provides methods for integrating station files from Transistor v3
- *
- * This file is part of
- * TRANSISTOR - Radio App for Android
- *
- * Copyright (c) 2015-22 - Y20K.org
- * Licensed under the MIT-License
- * http://opensource.org/licenses/MIT
- */
 
 
 package com.example.myapplication.helpers
 
 import android.content.Context
-import com.example.myapplication.core.Station
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import com.example.myapplication.Keys
-
+import com.example.myapplication.core.Collection
+import com.example.myapplication.core.Station
 import java.io.File
 import java.util.*
 
@@ -75,7 +63,7 @@ object ImportHelper {
                     // delete files from Transistor v3
                     oldCollectionFolder.deleteRecursively()
                     // sort and save collection
-                    val newCollection: com.example.myapplication.core.Collection = CollectionHelper.sortCollection(com.example.myapplication.core.Collection(stations = oldStations))
+                    val newCollection: Collection = CollectionHelper.sortCollection(Collection(stations = oldStations))
                     CollectionHelper.saveCollection(context, newCollection)
                 }
             }

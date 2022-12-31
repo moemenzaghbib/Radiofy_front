@@ -1,43 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="white2">#77FFFFFF</color>
-    <color name="colorPrimary">#F2D7D9</color>
-    <color name="colorPrimaryDark">#9CB4CC</color>
+    <!-- DAY THEME COLORS -->
 
-    <!-- new color-->
-    <color name="Orange">#FE522E</color>
-    <color name="cool_blue">#8891EA</color>
-    <color name="cool_green">#64DD17</color>
-    <color name="Ccool_pink">#F50057</color>
-    <color name="yelLow">#FFD688</color>
-    <color name="yelaaLow">#FE522E</color>
-    <color name="btn">#FE7255</color>
-    <color name="wwss">#BE45494A</color>
-    <color name="light_blue_400">#FF29B6F6</color>
-    <color name="light_blue_600">#FF039BE5</color>
-    <color name="gray_400">#FFBDBDBD</color>
-    <color name="gray_600">#FF757575</color>
-    <color name="light_blue_900">#FF01579B</color>
-    <color name="light_blue_A200">#FF40C4FF</color>
-    <color name="light_blue_A400">#FF00B0FF</color>
-    <color name="black_overlay">#66000000</color>
-    <color name="cool_pink">#F50057</color>
-    <color name="like_false">#CADBFB</color>
-    <color name="like_true">#5089fa</color>
-
-<!-- color radio -->
     <!-- app colors -->
     <color name="app_window_background">#fffffbfe</color> <!-- android:colorBackground / colorSurface -->
     <color name="status_bar_background">#ffe7e0ec</color> <!-- colorSurfaceVariant -->
     <color name="dialog_background">#fffffbfe</color> <!-- android:colorBackground / colorSurface -->
-    <!--    <color name="dialog_background">#ffe7e0ec</color> &lt;!&ndash; colorSurfaceVariant &ndash;&gt;-->
+<!--    <color name="dialog_background">#ffe7e0ec</color> &lt;!&ndash; colorSurfaceVariant &ndash;&gt;-->
     <color name="app_onboarding_icons">#ff1c1b1f</color> <!-- colorOnBackground / colorOnSurface-->
     <color name="toolbar_background">#ffe7e0ec</color> <!-- colorSurfaceVariant -->
 
@@ -81,5 +51,36 @@
     <color name="default_transparent">#00ffffff</color>
 
 
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white2">#77FFFFFF</color>
+    <color name="colorPrimary">#F2D7D9</color>
+    <color name="colorPrimaryDark">#9CB4CC</color>
+
+    <!-- new color-->
+    <color name="Orange">#FE522E</color>
+    <color name="cool_blue">#8891EA</color>
+    <color name="cool_green">#64DD17</color>
+    <color name="Ccool_pink">#F50057</color>
+    <color name="yelLow">#FFD688</color>
+    <color name="yelaaLow">#FE522E</color>
+    <color name="btn">#FE7255</color>
+    <color name="wwss">#BE45494A</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="cool_pink">#F50057</color>
+    <color name="like_false">#CADBFB</color>
+    <color name="like_true">#5089fa</color>
 
 </resources>

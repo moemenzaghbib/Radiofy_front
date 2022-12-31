@@ -3,12 +3,10 @@ package com.example.myapplication.ui
 
 import android.os.Parcelable
 import android.support.v4.media.session.PlaybackStateCompat
-import com.example.myapplication.Keys
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.gson.annotations.Expose
-import kotlinx.android.parcel.Parcelize
-
-
+import kotlinx.parcelize.Parcelize
+import com.example.myapplication.Keys
 
 
 /*

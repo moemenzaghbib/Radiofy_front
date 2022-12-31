@@ -1,15 +1,3 @@
-/*
- * ImageHelper.kt
- * Implements the ImageHelper object
- * An ImageHelper provides helper methods for image related operations
- *
- * This file is part of
- * TRANSISTOR - Radio App for Android
- *
- * Copyright (c) 2015-22 - Y20K.org
- * Licensed under the MIT-License
- * http://opensource.org/licenses/MIT
- */
 
 
 package com.example.myapplication.helpers
@@ -21,8 +9,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.net.toUri
 import androidx.palette.graphics.Palette
-import com.example.myapplication.R
 import com.example.myapplication.Keys
+import com.example.myapplication.R
 import java.io.IOException
 import java.io.InputStream
 
@@ -63,7 +51,7 @@ object ImageHelper {
 
         // get default image
         if (bitmap == null) {
-            bitmap = ContextCompat.getDrawable(context, R.drawable.ic_default_station_image_72dp)!!.toBitmap()
+            bitmap = ContextCompat.getDrawable(context, R.drawable.radio_fm_icon)!!.toBitmap()
         }
 
         return bitmap
@@ -166,7 +154,7 @@ object ImageHelper {
 
         // get default image
         if (bitmap == null) {
-            bitmap = ContextCompat.getDrawable(context, R.drawable.ic_default_station_image_72dp)!!.toBitmap()
+            bitmap = ContextCompat.getDrawable(context, R.drawable.radio_fm_icon)!!.toBitmap()
         }
 
         return bitmap

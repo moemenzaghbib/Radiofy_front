@@ -1,21 +1,8 @@
-/*
- * DateTimeHelper.kt
- * Implements the DateTimeHelper object
- * A DateTimeHelper provides helper methods for converting Date and Time objects
- *
- * This file is part of
- * TRANSISTOR - Radio App for Android
- *
- * Copyright (c) 2015-22 - Y20K.org
- * Licensed under the MIT-License
- * http://opensource.org/licenses/MIT
- */
 
 
 package com.example.myapplication.helpers
 
 import com.example.myapplication.Keys
-import com.example.myapplication.helpers.LogHelper
 import java.text.SimpleDateFormat
 import java.util.*
 

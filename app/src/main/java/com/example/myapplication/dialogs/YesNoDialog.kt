@@ -15,9 +15,9 @@
 package com.example.myapplication.dialogs
 
 import android.content.Context
-import com.example.myapplication.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.example.myapplication.Keys
+import com.example.myapplication.R
 import com.example.myapplication.helpers.LogHelper
 
 
