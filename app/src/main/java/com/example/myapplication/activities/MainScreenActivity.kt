@@ -90,7 +90,7 @@ class MainScreenActivity : AppCompatActivity() {
                     true
                 }
                 R.id.radio -> {
-                    startActivity(Intent(this, MainRadio ::class.java).apply {
+                    startActivity(Intent(this, com.example.myapplication.MainActivity ::class.java).apply {
 //                        putExtra("email" ,  email.toString())
                     })
                     true

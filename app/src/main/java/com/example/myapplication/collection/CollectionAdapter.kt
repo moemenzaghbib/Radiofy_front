@@ -43,10 +43,10 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import com.example.myapplication.Keys
 import com.example.myapplication.R
-import com.example.myapplication.collection.CollectionViewModel
 import com.example.myapplication.core.Collection
 import com.example.myapplication.core.Station
 import com.example.myapplication.helpers.*
+
 import java.util.*
 
 
@@ -144,7 +144,7 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
                 setStationName(stationViewHolder, station, position)
                 setStationImage(stationViewHolder, station, position)
                 setStationButtons(stationViewHolder, station)
-                setEditViews(stationViewHolder, station)
+//                setEditViews(stationViewHolder, station)
 
                 // show / hide edit views
                 when (expandedStationPosition) {
@@ -186,6 +186,7 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
     private fun setStationName(stationViewHolder: StationViewHolder, station: Station, position: Int) {
         stationViewHolder.stationNameView.text = station.name
     }
+
 
 
 
@@ -281,9 +282,9 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
                         val contentType: String = deferred.await().type.lowercase(Locale.getDefault())
                         // CASE: stream address detected
                         if (Keys.MIME_TYPES_MPEG.contains(contentType) or
-                                Keys.MIME_TYPES_OGG.contains(contentType) or
-                                Keys.MIME_TYPES_AAC.contains(contentType) or
-                                Keys.MIME_TYPES_HLS.contains(contentType)) {
+                            Keys.MIME_TYPES_OGG.contains(contentType) or
+                            Keys.MIME_TYPES_AAC.contains(contentType) or
+                            Keys.MIME_TYPES_HLS.contains(contentType)) {
                             // re-enable save button
                             withContext(Main) {
 //                                stationViewHolder.saveButton.isEnabled = true
@@ -476,7 +477,7 @@ class CollectionAdapter(private val context: Context, private val collectionAdap
         val stationImageView: ImageView = stationCardLayout.findViewById(R.id.station_icon)
         val stationNameView: TextView = stationCardLayout.findViewById(R.id.station_name)
         val stationStarredView: ImageView = stationCardLayout.findViewById(R.id.starred_icon)
-//        val menuButtonView: ImageView = stationCardLayout.findViewById(R.id.menu_button)
+        //        val menuButtonView: ImageView = stationCardLayout.findViewById(R.id.menu_button)
         val playButtonView: ImageView = stationCardLayout.findViewById(R.id.playback_button)
         val editViews: Group = stationCardLayout.findViewById(R.id.default_edit_views)
 //        val stationImageChangeView: ImageView = stationCardLayout.findViewById(R.id.change_image_view)
