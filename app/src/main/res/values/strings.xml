@@ -42,7 +42,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
-<!--    streing radio -->
+    <!--    streing radio -->
 
 
     <!-- please do not translate app_name - transcription into different alphabet types is fine though -->
@@ -276,9 +276,6 @@
     <string name="pref_restore_title">Restore Stations</string>
     <string name="pref_restore_summary">Restore collection of radio stations from backup. Existing stations will be replaced.</string>
     <string name="toastmessage_collection_backup">Backing up radio stations to:</string>
-
-
-
 
 
 </resources>

@@ -9,13 +9,12 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".activities.ApplicationClass"
@@ -30,8 +29,13 @@
         android:theme="@style/Theme.MyApplication"
         tools:ignore="AllowBackup"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".activities.EditProfile"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".activities.PlayNext"
             android:exported="false">
@@ -91,7 +95,6 @@
         <activity
             android:name=".activities.SplashScreen"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -105,8 +108,6 @@
         <activity
             android:name=".activities.MainScreenActivity"
             android:exported="true">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -164,31 +165,33 @@
 
         <receiver
             android:name=".activities.NotificationReceiver"
-            android:enabled="true" />
-
-        <!-- Main activity for radio station playback on phone -->
+            android:enabled="true" /> <!-- Main activity for radio station playback on phone -->
         <activity
             android:name=".activities.MainRadio"
             android:configChanges="orientation|screenSize"
             android:exported="true">
 
             <!-- react to main intents -->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
 
-<!--            &lt;!&ndash; react to voice searches, like "Play Security Now" &ndash;&gt;-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />-->
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--            </intent-filter>-->
+
+            <!-- &lt;!&ndash; react to voice searches, like "Play Security Now" &ndash;&gt; -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" /> -->
+            <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+            <!-- </intent-filter> -->
+
 
             <!-- react to playlist-links based on file extension -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:scheme="http" />
                 <data android:scheme="https" />
                 <data android:host="*" />
@@ -200,8 +203,10 @@
             <!-- react to playlist-links based on mimetype -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:scheme="http" />
                 <data android:scheme="https" />
                 <data android:host="*" />
@@ -218,7 +223,9 @@
             <!-- react to hls playlist-links based on mimetype -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:scheme="content" />
                 <data android:host="*" />
                 <data android:mimeType="audio/x-scpls" />
@@ -236,46 +243,34 @@
             </intent-filter>
 
             <!-- App Shortcuts -->
-            <meta-data android:name="android.app.shortcuts"
+            <meta-data
+                android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
-
-        </activity>
-
-
-        <!-- Player Service -->
+        </activity> <!-- Player Service -->
         <service
             android:name=".playback.PlayerService"
             android:enabled="true"
             android:exported="true"
             tools:ignore="ExportedService">
             <intent-filter>
-                <action android:name="android.media.browse.MediaBrowserService"/>
+                <action android:name="android.media.browse.MediaBrowserService" />
                 <action android:name="org.y20k.transistor.action.START_PLAYER_SERVICE" />
             </intent-filter>
-        </service>
-
-
-        <!-- handles completed downloads -->
+        </service> <!-- handles completed downloads -->
         <receiver
             android:name=".helpers.DownloadFinishedReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
             </intent-filter>
-        </receiver>
-
-
-        <!-- handles media buttons -->
+        </receiver> <!-- handles media buttons -->
         <receiver
             android:name="androidx.media.session.MediaButtonReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
-        </receiver>
-
-
-        <!-- file provider -->
+        </receiver> <!-- file provider -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -283,12 +278,8 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
-
-
-
     </application>
-
 
 </manifest>

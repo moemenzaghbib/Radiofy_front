@@ -75,15 +75,14 @@ class MainScreenActivity : AppCompatActivity() {
 
         appbark!!.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
-////                R.id.profile -> {
-//
-////                    startActivity(Intent(this@MainScreenActivity, ProfileActivity::class.java).apply {
-////                        putExtra("login" , loginIntent)
-////                        Log.e("intent1", loginIntent.toString())
-////                    })
-////
-////                    true
-////                }
+                R.id.edit_profile -> {
+
+                    startActivity(Intent(this, EditProfile::class.java).apply {
+                        putExtra("email" ,  email.toString())
+                    })
+
+                    true
+                }
                 R.id.music -> {
                     startActivity(Intent(this, MusicActivity ::class.java).apply {
 //                        putExtra("email" ,  email.toString())
