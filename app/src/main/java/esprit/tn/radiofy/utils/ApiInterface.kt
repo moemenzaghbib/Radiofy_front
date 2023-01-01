@@ -67,6 +67,8 @@ interface ApiInterface {
 
     @POST("chatRoom/GetAllConnectedUsers")
     fun GetAllConnectedUsers(@Body map: HashMap<String, String>):Call<ArrayList<data>>
+    @GET("chatRoom/GetAllChatRooms")
+    fun GetAllChatRooms():Call<ArrayList<data>>
 
     @PUT("user/editProfileUser")
     fun editProfileUser(@Body map: HashMap<String ,String>):Call<User>

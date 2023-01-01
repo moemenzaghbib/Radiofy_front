@@ -84,7 +84,7 @@ class MainScreenActivity : AppCompatActivity() {
                     true
                 }
                R.id.chat -> {
-                   val intent = Intent(this, ChatRoomActivity ::class.java)
+                   val intent = Intent(this, ChatRoomsList ::class.java)
                        .putExtra("email", email.toString())
                     startActivity(intent)
 //                   finish()

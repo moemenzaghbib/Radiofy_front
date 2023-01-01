@@ -59,9 +59,10 @@ class ChatRoomActivity : AppCompatActivity(), View.OnClickListener {
 //            e.printStackTrace()
 //        }
         val email = intent.getStringExtra("email").toString()
+        val radioName = intent.getStringExtra("radioName").toString()
         println("moemen testing the email in the chat "+email);
         userName = email.toString()
-        roomName = "roomName"
+        roomName = radioName.toString()
 
 
         //Set Chatroom adapter
