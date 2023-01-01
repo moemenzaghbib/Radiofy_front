@@ -14,7 +14,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frag_home"
-        android:name="com.example.myapplication.fragments.Home"
+        android:name="esprit.tn.radiofy.fragments.Home"
         android:layout_width="408dp"
         android:layout_height="675dp"
         app:layout_constraintLeft_toLeftOf="parent"

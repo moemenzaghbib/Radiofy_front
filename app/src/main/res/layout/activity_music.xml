@@ -56,7 +56,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:name="com.example.myapplication.activities.NowPlaying"
+                android:name="esprit.tn.radiofy.activities.NowPlaying"
                 tools:layout="@layout/fragment_now_playing"
                 android:visibility="gone"/>
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -233,7 +233,7 @@
     <string name="pref_restore_summary">Restore collection of radio stations from backup. Existing stations will be replaced.</string>
     <string name="toastmessage_collection_backup">Backing up radio stations to:</string>
 
-    <string name="app_name">My Application</string>
+    <string name="app_name">RadioFy</string>
     <string name="appli_name">Radiofy</string>
     <string name="mustNotBeEmpty">Must not be empty !</string>
     <string name="lastname">LastName</string>

@@ -1,7 +1,7 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.myapplication">
+    package="esprit.tn.radiofy">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -44,7 +44,7 @@
             android:resource="@drawable/image_radio" />
 
         <activity
-            android:name=".activities.EditProfile"
+            android:name="esprit.tn.radiofy.activities.EditProfile"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -53,18 +53,18 @@
         <activity
 
 
-            android:name=".PlayerServiceStarterActivity"
+            android:name="esprit.tn.radiofy.PlayerServiceStarterActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
 <!--            <intent-filter>-->
-<!--                <action android:name="com.example.myapplication.action.START_PLAYER_SERVICE" />-->
+<!--                <action android:name="myapplication11.action.START_PLAYER_SERVICE" />-->
 <!--            </intent-filter>-->
         </activity>
         <!-- Main activity for radio station playback on phone -->
         <activity
-            android:name=".MainActivity"
+            android:name="esprit.tn.radiofy.MainActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true">
 
@@ -126,7 +126,7 @@
 
             <!-- react to "start player service" intents -->
 <!--            <intent-filter>-->
-<!--                <action android:name="com.example.myapplication.action.START_PLAYER_SERVICE" />-->
+<!--                <action android:name="myapplication11.action.START_PLAYER_SERVICE" />-->
 <!--            </intent-filter>-->
 
             <!-- App Shortcuts -->
@@ -138,20 +138,20 @@
 
         <!-- Player Service -->
         <service
-            android:name=".playback.PlayerService"
+            android:name="esprit.tn.radiofy.playback.PlayerService"
             android:enabled="true"
             android:exported="true"
             tools:ignore="ExportedService">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.media.browse.MediaBrowserService"/>-->
-<!--                <action android:name="com.example.myapplication.action.START_PLAYER_SERVICE" />-->
+<!--                <action android:name="myapplication11.action.START_PLAYER_SERVICE" />-->
 <!--            </intent-filter>-->
         </service>
 
 
         <!-- handles completed downloads -->
         <receiver
-            android:name=".helpers.DownloadFinishedReceiver"
+            android:name="esprit.tn.radiofy.helpers.DownloadFinishedReceiver"
             android:exported="true">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />-->
@@ -188,14 +188,14 @@
 <!--                android:value="" />-->
 <!--        </activity>-->
         <activity
-            android:name=".activities.PlayNext"
+            android:name="esprit.tn.radiofy.activities.PlayNext"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.MusicActivity"
+            android:name="esprit.tn.radiofy.activities.MusicActivity"
             android:exported="true">
 
 <!--             <intent-filter>-->
@@ -217,7 +217,7 @@
 <!--                android:value="" />-->
 <!--        </activity>-->
 
-        <service android:name=".activities.MusicService" />
+        <service android:name="esprit.tn.radiofy.activities.MusicService" />
         <!--
         <activity
             android:name=".ChatRoomAdapter"
@@ -227,24 +227,24 @@
             android:theme="@style/Theme.MyApplication.Fullscreen" />
         -->
         <activity
-            android:name=".activities.ChatRoomActivity"
+            android:name="esprit.tn.radiofy.activities.ChatRoomActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.EntranceActivity"
+            android:name="esprit.tn.radiofy.activities.EntranceActivity"
             android:exported="true" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name="esprit.tn.radiofy.ForgotPasswordActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.SplashScreen"
+            android:name="esprit.tn.radiofy.activities.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -257,28 +257,28 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.MainScreenActivity"
+            android:name="esprit.tn.radiofy.activities.MainScreenActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.SignInActivity"
+            android:name="esprit.tn.radiofy.activities.SignInActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.login2"
+            android:name="esprit.tn.radiofy.activities.login2"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.PlayerActivity"
+            android:name="esprit.tn.radiofy.activities.PlayerActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -292,14 +292,14 @@
 <!--                android:value="" />-->
 <!--        </activity>-->
         <activity
-            android:name=".activities.PostDetails"
+            android:name="esprit.tn.radiofy.activities.PostDetails"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name="esprit.tn.radiofy.activities.MainActivity"
             android:exported="true">
 
             <!-- <intent-filter> -->
@@ -315,7 +315,7 @@
         </activity>
 
         <receiver
-            android:name=".activities.NotificationReceiver"
+            android:name="esprit.tn.radiofy.activities.NotificationReceiver"
             android:enabled="true" /> <!-- Main activity for radio station playback on phone -->
 <!--        <activity-->
 <!--            android:name=".activities.MainRadio"-->

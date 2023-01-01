@@ -6,7 +6,7 @@
         <import type="android.view.View"/>
         <variable
             name="item"
-            type="com.example.myapplication.models.EventItem" />
+            type="esprit.tn.radiofy.models.EventItem" />
     </data>
 
 <com.google.android.material.card.MaterialCardView

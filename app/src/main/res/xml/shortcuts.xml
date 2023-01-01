@@ -8,9 +8,9 @@
         android:shortcutLongLabel="@string/shortcut_last_station_long_label"
         android:shortcutDisabledMessage="@string/shortcut_last_station_disabled_message">
         <intent
-            android:action="com.example.myapplication.action.START_PLAYER_SERVICE"
-            android:targetPackage="com.example.myapplication"
-            android:targetClass="com.example.myapplication.MainActivity" >
+            android:action="esprit.tn.radiofy.action.START_PLAYER_SERVICE"
+            android:targetPackage="esprit.tn.radiofy"
+            android:targetClass="esprit.tn.radiofy.MainActivity" >
             <extra android:name="START_LAST_PLAYED_STATION" android:value="true" />
         </intent>
         <categories android:name="android.shortcut.conversation" />

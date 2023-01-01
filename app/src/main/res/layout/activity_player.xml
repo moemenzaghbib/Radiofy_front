@@ -54,7 +54,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_margin="10dp"
-        android:src="@drawable/ww2"
+        android:src="@drawable/_844724"
         app:shapeAppearanceOverlay="@style/curved"
         app:strokeColor="@color/white"
         app:strokeWidth="5dp"

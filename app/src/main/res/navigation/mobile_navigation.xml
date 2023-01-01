@@ -7,11 +7,11 @@
 
     <fragment
         android:id="@+id/eventDetailFragment"
-        android:name="com.example.myapplication.fragments.EventDetailFragment"
+        android:name="esprit.tn.radiofy.fragments.EventDetailFragment"
         android:label="EventDetailFragment" >
         <argument
             android:name="eventItem"
-            app:argType="com.example.myapplication.models.EventItem"
+            app:argType="esprit.tn.radiofy.models.EventItem"
             app:nullable="true" />
         <action
             android:id="@+id/action_eventDetailFragment_to_musicActivity"
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/home2"
-        android:name="com.example.myapplication.fragments.Home"
+        android:name="esprit.tn.radiofy.fragments.Home"
         android:label="Home" >
         <action
             android:id="@+id/action_home2_to_eventDetailFragment"
@@ -27,7 +27,7 @@
     </fragment>
     <activity
         android:id="@+id/musicActivity"
-        android:name="com.example.myapplication.activities.MusicActivity"
+        android:name="esprit.tn.radiofy.activities.MusicActivity"
         android:label="activity_music"
         tools:layout="@layout/activity_music" />
 </navigation>

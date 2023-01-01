@@ -12,7 +12,7 @@
 // */
 //
 //
-//package com.example.myapplication.fragments
+//package esprit.tn.radiofy.fragments
 //
 //import android.app.Activity
 //import android.content.ClipData
@@ -33,11 +33,11 @@
 //import kotlinx.coroutines.CoroutineScope
 //import kotlinx.coroutines.Dispatchers.IO
 //import kotlinx.coroutines.launch
-//import com.example.myapplication.Keys
-//import com.example.myapplication.dialogs.ErrorDialog
-//import com.example.myapplication.dialogs.YesNoDialog
-//import com.example.myapplication.helpers.*
-//import com.example.myapplication.helpers.DownloadHelper.updateStationImages
+//import esprit.tn.radiofy.Keys
+//import esprit.tn.radiofy.dialogs.ErrorDialog
+//import esprit.tn.radiofy.dialogs.YesNoDialog
+//import esprit.tn.radiofy.helpers.*
+//import esprit.tn.radiofy.helpers.DownloadHelper.updateStationImages
 //
 //
 ///*

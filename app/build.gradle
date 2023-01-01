@@ -19,12 +19,12 @@ apply plugin: 'kotlin-android'
 tasks.register("prepareKotlinBuildScriptModel"){}
 
 android {
-    namespace 'com.example.myapplication'
+    namespace 'esprit.tn.radiofy'
     compileSdkVersion 33
     // buildToolsVersion is optional because the plugin uses a recommended version by default
 
     defaultConfig {
-        applicationId 'com.example.myapplication'
+        applicationId 'esprit.tn.radiofy'
         minSdkVersion 25
         targetSdkVersion 33
         versionCode 91
@@ -103,7 +103,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+//    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
     // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
     def coroutinesVersion = "1.5.2"
@@ -203,6 +203,6 @@ dependencies {
 //    implementation "android.navigation:navigation-fragment-ktx:$nav_version"
 //    implementation "android.navigation:navigation-ui-ktx:$nav_version"
 
-
 }
 //apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'com.huawei.agconnect'

@@ -8,7 +8,7 @@
     <!-- PLAYER -->
     <fragment
         android:id="@+id/player_destination"
-        android:name="com.example.myapplication.PlayerFragment"
+        android:name="esprit.tn.radiofy.PlayerFragment"
         android:label="Player"
         tools:layout="@layout/fragment_player"/>
 
