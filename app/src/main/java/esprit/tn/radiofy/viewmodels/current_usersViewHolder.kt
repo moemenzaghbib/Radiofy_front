@@ -16,5 +16,6 @@ import esprit.tn.radiofy.R
             email = itemView.findViewById<TextView>(R.id.userEmail_currentUser)
             name = itemView.findViewById<TextView>(R.id.userName_currentUser)
             btn_banne = itemView.findViewById<Button>(R.id.banne_user_button)
+
         }
     }

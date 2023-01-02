@@ -85,7 +85,7 @@ class PostRepository {
                                   val post_created = response.body()
                                   if (post_created==null)
                                   {     Log.e("hamma","tahan")
-                                      println(response)
+//                                      println(response)
                                   }
                               }
 
@@ -161,7 +161,7 @@ class PostRepository {
                                     val post_created = response.body()
                                     if (post_created==null)
                                     {     Log.e("hamma","tahan")
-                                        println(response)
+//                                        println(response)
                                     }
                                 }
 

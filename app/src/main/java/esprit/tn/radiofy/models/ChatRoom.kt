@@ -7,5 +7,7 @@ const val NAME = "NAME"
 class ChatRoom ( @DrawableRes
 
 
-                 val radioName: String)
+                 val radioName: String,
+                 val radioEmail: String
+                 )
 

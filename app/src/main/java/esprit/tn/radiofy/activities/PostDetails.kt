@@ -194,6 +194,7 @@ class PostDetails : AppCompatActivity() {
                                 call: Call<ArrayList<data>>,
                                 response: Response<ArrayList<data>>
                             ) {
+
                                 val comments = response.body()
                                 if(comments!=null){
                                     println("first test\n"+comments)

@@ -232,6 +232,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".activities.ChatRoomActivity_user"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.EntranceActivity"
             android:exported="true" />
         <activity

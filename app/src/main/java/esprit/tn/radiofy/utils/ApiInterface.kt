@@ -67,11 +67,32 @@ interface ApiInterface {
 
     @POST("chatRoom/GetAllConnectedUsers")
     fun GetAllConnectedUsers(@Body map: HashMap<String, String>):Call<ArrayList<data>>
+
     @GET("chatRoom/GetAllChatRooms")
     fun GetAllChatRooms():Call<ArrayList<data>>
 
     @PUT("user/editProfileUser")
     fun editProfileUser(@Body map: HashMap<String ,String>):Call<User>
+
+    @PUT("chatRoom/addConnectedUser")
+    fun addConnectedUser(@Body map: HashMap<String ,String>):Call<User>
+
+    @PUT("chatRoom/removeConnectedUser")
+    fun removeConnectedUser(@Body map: HashMap<String ,String>):Call<User>
+    @PUT("chatRoom/BanneUser")
+    fun BanneUser(@Body map: HashMap<String ,String>):Call<User>
+
+    @PUT("chatRoom/UnBanneUser")
+    fun UnBanneUser(@Body map: HashMap<String ,String>):Call<User>
+
+
+    @POST("chatRoom/CheckBannedUser")
+    fun CheckBannedUser(@Body map: HashMap<String, String>):Call<data>
+
+
+
+
+
 
 
 

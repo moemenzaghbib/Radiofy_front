@@ -21,12 +21,18 @@ class ChatRooms_list_Adapter (email: String,val chatrooms_list: MutableList<Chat
     }
     override fun onBindViewHolder(holder: ChatRoom_list_ViewHolder, position: Int) {
         val radioName = chatrooms_list[position].radioName
+        val radioEmail = chatrooms_list[position].radioEmail
 
        holder.radioName.text =radioName
+        holder.radioEamil.text =radioEmail
 
 
     }
+    fun updateData() {
+        chatrooms_list.clear()
 
+        notifyDataSetChanged()
+    }
     override fun getItemCount() = chatrooms_list.size
 
 

@@ -38,9 +38,10 @@ class ChatRoomsList : AppCompatActivity() {
                     val list = mutableListOf<ChatRoom>()
 
                     for(i in chatrooms){
-                        list.add(ChatRoom(i.value.toString()))
+                        list.add(ChatRoom(i.value.toString(),i.key.toString()))
 
                     }
+
 
                     recyclerChatRoom_list_Adapter = ChatRooms_list_Adapter(email,list)
                     chatroom_list_ReycleView.adapter = recyclerChatRoom_list_Adapter
